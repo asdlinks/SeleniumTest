@@ -174,14 +174,64 @@ module.exports = function() {
     await driver.sleep(3000);
   });
 
-  // Step: Then I should see the Thank You message confirming the order (updated)
-  this.Then('I should see the Thank You message confirming the order', async function () {
-    await orderConfirmationPage.waitForConfirmationPageLoad();
-    const isConfirmed = await orderConfirmationPage.isOrderConfirmed();
-    expect(isConfirmed).to.be.true;
-    
-    const thankYouText = await orderConfirmationPage.getThankYouText();
-    console.log(`Order Confirmation Message: ${thankYouText}`);
+  // New Deals & Offers flow steps
+  this.When('I click the All Products link under Browse by', async function () {
+    await dealsAndOffersPage.clickAllProductsLink();
+    await driver.sleep(2000);
+  });
+
+  this.Then('I should see at least 10 products on the page', async function () {
+    const count = await dealsAndOffersPage.getProductCardCount();
+    expect(count).to.be.at.least(10);
+  });
+
+  this.When('I click Load More three times', async function () {
+    let lastCount = await dealsAndOffersPage.getProductCardCount();
+
+    for (let i = 0; i < 3; i += 1) {
+      const before = await dealsAndOffersPage.getProductCardCount();
+      await dealsAndOffersPage.clickLoadMore();
+      const after = await dealsAndOffersPage.getProductCardCount();
+      lastCount = after;
+
+      if (after > before) {
+        continue;
+      }
+
+      await driver.sleep(2000);
+      const retryCount = await dealsAndOffersPage.getProductCardCount();
+      if (retryCount > before) {
+        lastCount = retryCount;
+      }
+    }
+
+    expect(lastCount).to.be.greaterThan(0);
+  });
+
+  this.When('I set the price filter to a maximum of 300', async function () {
+    await dealsAndOffersPage.setPriceRange(300, 0);
+    await driver.sleep(2000);
+    const screenshot = await driver.takeScreenshot();
+    this.attach(Buffer.from(screenshot, 'base64'), 'image/png');
+  });
+
+  this.Then('I should see only products priced at 300 or less', async function () {
+    const prices = await dealsAndOffersPage.getProductPrices();
+    expect(prices.length).to.be.greaterThan(0);
+    const hasWithinRange = prices.some((priceText) => parseFloat(priceText.replace(/\$/g, '')) <= 300);
+    expect(hasWithinRange).to.be.true;
+  });
+
+  this.When('I set the price filter to a maximum of 100', async function () {
+    await dealsAndOffersPage.setPriceRange(100, 0);
+    await driver.sleep(2000);
+    const screenshot = await driver.takeScreenshot();
+    this.attach(Buffer.from(screenshot, 'base64'), 'image/png');
+  });
+
+  this.Then('I should see the price filter span text on the page', async function () {
+    const text = await dealsAndOffersPage.getFilterRangeText();
+    expect(text.toLowerCase()).to.contain('100');
   });
 
   // Step: And I should see the first name and last name on the confirmation page

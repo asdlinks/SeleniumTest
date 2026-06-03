@@ -112,6 +112,19 @@ function createWorld() {
         expect: expect,             // expose chai expect to allow variable testing
         assert: assert,             // expose chai assert to allow variable testing
         trace: consoleInfo,         // expose an info method to log output to the console in a readable/visible format
+        attach: function (data, mimeType) {
+            if (!data) {
+                return null;
+            }
+
+            var screenshotPath = path.resolve(global.reportsPath || path.resolve(process.cwd(), 'reports'), 'screenshots');
+            fs.makeTreeSync(screenshotPath);
+
+            var outputFile = path.resolve(screenshotPath, 'price-filter-' + Date.now() + '.png');
+            fs.writeFileSync(outputFile, data);
+
+            return outputFile;
+        },
         page: global.page || {},    // empty page objects placeholder
         shared: global.shared || {} // empty shared objects placeholder
     };
@@ -125,6 +138,8 @@ function createWorld() {
         // make property/method available as a global (no this. prefix required)
         global[key] = runtime[key];
     });
+
+    return runtime;
 }
 
 /**

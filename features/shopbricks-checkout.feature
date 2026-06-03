@@ -25,3 +25,4 @@ Feature: Shopbricks Checkout Flow
     And I click the Place Order button
     Then I should see the Thank You message confirming the order
     And I should see the order confirmation details
+
