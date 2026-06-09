@@ -9,6 +9,7 @@ const ProductPage = require('../page-objects/product-page');
 const CartPage = require('../page-objects/cart-page');
 const CheckoutPage = require('../page-objects/checkout-page');
 const OrderConfirmationPage = require('../page-objects/order-confirmation-page');
+const homePageData = require('../shared-objects/home-page-data');
 
 let driver;
 let homePage;
@@ -57,6 +58,55 @@ module.exports = function() {
   this.Given('I navigate to the Shopbricks website', async function () {
     await homePage.navigateToHome('https://www.shopbricks.co/');
     await homePage.waitForPageLoad();
+  });
+
+  this.Given('I navigate to the Shopbricks homepage', async function () {
+    await homePage.navigateToHome('https://www.shopbricks.co/');
+    await homePage.waitForPageLoad();
+  });
+
+  this.Then('I should see the Shop By Category heading', async function () {
+    const expectedHeading = homePageData.homepage.shopByCategoryHeading;
+    const actualHeading = await homePage.getTextFromLocator(await homePage.getShopByCategoryHeading());
+    expect(actualHeading).to.equal(expectedHeading);
+  });
+
+  this.Then('I should see the homepage categories', async function () {
+    const expectedCategories = homePageData.homepage.categories;
+
+    for (const category of expectedCategories) {
+      const locator = await homePage.getSectionItemLocator(category);
+      const visible = await homePage.isLocatorVisible(locator);
+      expect(visible).to.be.true;
+    }
+  });
+
+  this.Then('I should see the Our Trusted Brands heading', async function () {
+    const expectedHeading = homePageData.homepage.trustedBrandsHeading;
+    const actualHeading = await homePage.getTextFromLocator(await homePage.getTrustedBrandsHeading());
+    expect(actualHeading).to.equal(expectedHeading);
+  });
+
+  this.When('I capture homepage section values for Shop By Category, Shop Power Tools, Shop Hardware, and Our Trusted Brands', async function () {
+    const headings = homePageData.homepage.sectionHeadings;
+    this.homepageSectionValues = {};
+
+    for (const heading of headings) {
+      const items = await homePage.getItemsUnderHeading(heading);
+      this.homepageSectionValues[heading] = items;
+      console.log(`Captured ${items.length} items under heading '${heading}':`, items);
+    }
+  });
+
+  this.Then('I should see homepage section options under each heading', async function () {
+    const headings = homePageData.homepage.sectionHeadings;
+
+    for (const heading of headings) {
+      const items = this.homepageSectionValues && this.homepageSectionValues[heading];
+      expect(items).to.be.an('array').that.is.not.empty;
+      expect(items.every((item) => typeof item === 'string' && item.trim().length > 0)).to.be.true;
+      console.log(`Validated ${items.length} non-empty items under heading '${heading}'.`);
+    }
   });
 
   // Step: When I click on the Deals and Offers section
