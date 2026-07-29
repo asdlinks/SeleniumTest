@@ -4,7 +4,8 @@
   "description": "JavaScript browser automation framework using official selenium-webdriver and cucumber-js",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "lint:no-prod-url": "node scripts/check-no-prod-url.js"
   },
   "author": {
     "name": "Aditya"
@@ -43,6 +44,7 @@
     "cucumber": "1.3.3",
     "cucumber-html-reporter": "4.0.4",
     "cucumber-junit": "1.6.0",
+    "dotenv": "^8.2.0",
     "electron": "^9.1.0",
     "electron-chromedriver": "^1.7.1",
     "electron-packager": "^9.1.0",
@@ -175,6 +177,13 @@
       "strict": "off",
       "valid-jsdoc": [
         "error"
+      ],
+      "no-restricted-syntax": [
+        "error",
+        {
+          "selector": "Literal[value=/shopbricks\\.com/]",
+          "message": "Do not hardcode shopbricks.com URLs. Use config.baseUrl from config/env.js instead."
+        }
       ]
     }
   }
