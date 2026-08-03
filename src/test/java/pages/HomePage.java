@@ -4,14 +4,11 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage {
 
-    private static final By DEALS_OFFERS_LINK =
-            By.xpath("//a[contains(text(), 'Deals') or contains(text(), 'Offers')]");
-    private static final By NAV_DEALS_OFFERS_BUTTON =
-            By.xpath("//span[contains(text(), 'Deals')] | //span[contains(text(), 'Offers')]");
+    private static final By DEALS_OFFERS_LINK = By.cssSelector("[data-testid='deals-offers-link']");
+    private static final By NAV_DEALS_OFFERS_BUTTON = By.cssSelector("[data-testid='nav-deals-offers-button']");
 
     public HomePage(WebDriver driver) {
         super(driver);

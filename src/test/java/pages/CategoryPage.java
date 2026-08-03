@@ -6,15 +6,14 @@ import org.openqa.selenium.WebElement;
 
 public class CategoryPage extends BasePage {
 
-    private static final By CATEGORY_TITLE =
-            By.xpath("//h1[contains(text(), 'Hardware')] | //h2[contains(text(), 'Hardware')]");
+    private static final By CATEGORY_TITLE = By.cssSelector("[data-testid='category-title']");
 
     public CategoryPage(WebDriver driver) {
         super(driver);
     }
 
     private By productByName(String productName) {
-        return By.xpath("//a[contains(@href, '/product-page/')][contains(., '" + productName + "')]");
+        return By.cssSelector("[data-testid='product-link'][data-product-name='" + productName + "']");
     }
 
     public boolean isCategoryPageLoaded() {
