@@ -102,6 +102,7 @@ public class AllProductsCatalogBrowseTest {
         moveSliderToValue(minSlider, 0);
         moveSliderToValue(maxSlider, 100);
 
+        wait.until(driverRef -> bodyText().contains("100"));
         String filteredBody = bodyText();
         assertTrue(filteredBody.contains("100"), "Expected the price filter text to reflect the selected max of 100");
         List<String> filteredPrices = extractPrices(filteredBody);

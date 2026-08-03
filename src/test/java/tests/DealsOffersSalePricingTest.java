@@ -72,6 +72,7 @@ public class DealsOffersSalePricingTest {
                 "Expected at least one regular/sale price pair per discounted product");
 
         dealsAndOffersPage.clickLoadMore();
+        wait.until(driverRef -> dealsAndOffersPage.getProductCardCount() > initialCount);
         int countAfterLoadMore = dealsAndOffersPage.getProductCardCount();
         assertTrue(countAfterLoadMore > initialCount,
                 "Expected more discounted products to load after clicking Load More");

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class CartPage extends BasePage {
 
     private static final By CHECKOUT_BUTTON = By.xpath(
-            "//button[contains(text(), 'Checkout')] | //a[contains(text(), 'Checkout')] | //span[text()='Checkout']");
+            "//button[contains(., 'Checkout')] | //a[contains(., 'Checkout')]");
 
     public CartPage(WebDriver driver) {
         super(driver);

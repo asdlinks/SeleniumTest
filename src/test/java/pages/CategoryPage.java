@@ -14,12 +14,7 @@ public class CategoryPage extends BasePage {
     }
 
     private By productByName(String productName) {
-        return By.xpath("//a[contains(text(), '" + productName + "')] | //div[contains(text(), '"
-                + productName + "')] | //span[contains(text(), '" + productName + "')]");
-    }
-
-    private By productLink(String productName) {
-        return By.xpath("//a[contains(@href, '/product')] | //a[contains(text(), '" + productName + "')]");
+        return By.xpath("//a[contains(@href, '/product-page/')][contains(., '" + productName + "')]");
     }
 
     public boolean isCategoryPageLoaded() {
@@ -31,13 +26,8 @@ public class CategoryPage extends BasePage {
     }
 
     public void selectProduct(String productName) {
-        try {
-            WebElement element = waitFor(productByName(productName));
-            scrollIntoView(element);
-            element.click();
-        } catch (org.openqa.selenium.TimeoutException e) {
-            WebElement link = waitFor(productLink(productName));
-            link.click();
-        }
+        WebElement element = waitFor(productByName(productName));
+        scrollIntoView(element);
+        element.click();
     }
 }
