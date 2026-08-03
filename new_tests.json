@@ -1,0 +1,26 @@
+[
+  {
+    "id": "category-deals-offers-sale-pricing",
+    "title": "showsSalePricingConsistentlyAcrossListingAndProductPage",
+    "description": "Browses the Deals & Offers listing, paginates via Load More, and verifies a discounted product's sale price matches between the listing and its product detail page.",
+    "file": "src/test/java/tests/DealsOffersSalePricingTest.java"
+  },
+  {
+    "id": "catalog-all-products-browse",
+    "title": "browsesFiltersSortsAndPaginatesAllProductsCatalog",
+    "description": "Browses the All Products catalog, filters by price range, changes the sort order, and paginates via Load More while checking for duplicate products.",
+    "file": "src/test/java/tests/AllProductsCatalogBrowseTest.java"
+  },
+  {
+    "id": "category-home-decor-browse-to-product",
+    "title": "browsesHomeDecorCategoryAndOpensProductDetail",
+    "description": "Browses the Home & Decor category listing and opens a product to verify its name and price on the detail page.",
+    "file": "src/test/java/tests/HomeDecorBrowseToProductTest.java"
+  },
+  {
+    "id": "category-lighting-electrical-browse-to-product",
+    "title": "browsesLightingElectricalCategoryAndOpensProductDetail",
+    "description": "Browses the Lighting & Electrical category listing and opens a product to verify its name and price on the detail page.",
+    "file": "src/test/java/tests/LightingElectricalBrowseToProductTest.java"
+  }
+]
