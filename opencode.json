@@ -1,0 +1,1 @@
+{"$schema": "https://opencode.ai/config.json", "permission": {"*": "allow"}, "mcp": {"browser": {"type": "local", "command": ["node", "/app/browser.mjs", "--profile", "setup", "--url", "about:blank"], "environment": {}, "enabled": true}}}

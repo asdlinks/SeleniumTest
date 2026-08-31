@@ -1,0 +1,1944 @@
+{
+  "_meta": {
+    "description": "Single source of expected test data for the Shopbricks BDD framework. Consumed through shared-objects/data-provider.js.",
+    "source": "https://www.shopbricks.co/",
+    "capturedOn": "2026-08-31",
+    "note": "Captured from the live storefront. Refresh the categories/products blocks when the catalogue changes."
+  },
+  "site": {
+    "name": "Bricks",
+    "baseUrl": "https://www.shopbricks.co/",
+    "titleSuffix": " | Bricks",
+    "currency": "USD",
+    "currencySymbol": "$"
+  },
+  "pages": {
+    "home": {
+      "key": "home",
+      "name": "Home",
+      "path": "/",
+      "url": "https://www.shopbricks.co/",
+      "pageTitle": "Home | Bricks"
+    },
+    "allProducts": {
+      "key": "allProducts",
+      "name": "All Products",
+      "path": "/category/all-products",
+      "url": "https://www.shopbricks.co/category/all-products",
+      "pageTitle": "All Products | Bricks"
+    },
+    "dealsAndOffers": {
+      "key": "dealsAndOffers",
+      "name": "Deals & Offers",
+      "path": "/category/deals-offers",
+      "url": "https://www.shopbricks.co/category/deals-offers",
+      "pageTitle": "Deals & Offers | Bricks"
+    },
+    "hardware": {
+      "key": "hardware",
+      "name": "Hardware",
+      "path": "/category/hardware",
+      "url": "https://www.shopbricks.co/category/hardware",
+      "pageTitle": "Hardware | Bricks"
+    },
+    "aboutUs": {
+      "key": "aboutUs",
+      "name": "About Us",
+      "path": "/about-us",
+      "url": "https://www.shopbricks.co/about-us",
+      "pageTitle": "About Us | Bricks"
+    },
+    "helpCenter": {
+      "key": "helpCenter",
+      "name": "Help Center",
+      "path": "/help-center",
+      "url": "https://www.shopbricks.co/help-center",
+      "pageTitle": "Help Center | Bricks"
+    },
+    "services": {
+      "key": "services",
+      "name": "Services",
+      "path": "/services",
+      "url": "https://www.shopbricks.co/services",
+      "pageTitle": "Services | Bricks"
+    }
+  },
+  "navigation": {
+    "logoText": "BRICKS",
+    "headerLinks": [
+      {
+        "label": "About Us",
+        "url": "https://www.shopbricks.co/about-us"
+      },
+      {
+        "label": "Help Center",
+        "url": "https://www.shopbricks.co/help-center"
+      },
+      {
+        "label": "Shop All",
+        "url": "https://www.shopbricks.co/category/all-products"
+      },
+      {
+        "label": "Deals & Offers",
+        "url": "https://www.shopbricks.co/category/deals-offers"
+      },
+      {
+        "label": "Services",
+        "url": "https://www.shopbricks.co/services"
+      }
+    ],
+    "browseBy": {
+      "heading": "Browse by",
+      "categories": [
+        {
+          "label": "All Products",
+          "url": "https://www.shopbricks.co/category/all-products"
+        },
+        {
+          "label": "Hardware",
+          "url": "https://www.shopbricks.co/category/hardware"
+        },
+        {
+          "label": "Paint Supplies",
+          "url": "https://www.shopbricks.co/category/paint-supplies"
+        },
+        {
+          "label": "Power Tools",
+          "url": "https://www.shopbricks.co/category/power-tools"
+        },
+        {
+          "label": "Storage & Organization",
+          "url": "https://www.shopbricks.co/category/storage-organization"
+        },
+        {
+          "label": "Building Supplies",
+          "url": "https://www.shopbricks.co/category/building-supplies"
+        },
+        {
+          "label": "Lawn & Gardening",
+          "url": "https://www.shopbricks.co/category/lawn-gardening"
+        },
+        {
+          "label": "Home & Decor",
+          "url": "https://www.shopbricks.co/category/home-decor"
+        },
+        {
+          "label": "Lighting & Electrical",
+          "url": "https://www.shopbricks.co/category/lighting-electrical"
+        },
+        {
+          "label": "Deals & Offers",
+          "url": "https://www.shopbricks.co/category/deals-offers"
+        }
+      ]
+    },
+    "filters": {
+      "heading": "Filter by",
+      "priceLabel": "Price",
+      "minimumPriceSliderLabel": "Minimum price",
+      "maximumPriceSliderLabel": "Maximum price",
+      "sortByLabel": "Sort by:",
+      "defaultSortOption": "Recommended",
+      "loadMoreButtonText": "Load More"
+    },
+    "footerDepartments": [
+      "Hardware",
+      "Paint Supplies",
+      "Power Tools",
+      "Building Supplies"
+    ]
+  },
+  "categories": {
+    "all-products": {
+      "key": "all-products",
+      "name": "All Products",
+      "path": "/category/all-products",
+      "url": "https://www.shopbricks.co/category/all-products",
+      "pageTitle": "All Products | Bricks",
+      "productsOnFirstPage": 10,
+      "minimumExpectedProducts": 10,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 500
+      },
+      "expectedProducts": [
+        {
+          "name": "Gray Decorative Cushion",
+          "slug": "gray-decorative-cushion",
+          "sku": "074",
+          "price": 29.99,
+          "priceText": "$29.99"
+        },
+        {
+          "name": "Colorful Wooden Cabinet",
+          "slug": "colorful-wooden-cabinet",
+          "sku": "073",
+          "price": 30,
+          "priceText": "$30.00"
+        },
+        {
+          "name": "Indoor Carpet Runner",
+          "slug": "indoor-carpet-runner",
+          "sku": "072",
+          "price": 19.99,
+          "priceText": "$19.99"
+        },
+        {
+          "name": "3-Pc. Pillow Set",
+          "slug": "3-pc-pillow-set",
+          "sku": "071",
+          "price": 19.99,
+          "priceText": "$19.99"
+        },
+        {
+          "name": "Wooden Picture Frame",
+          "slug": "wooden-picture-frame",
+          "sku": "070",
+          "price": 19.99,
+          "priceText": "$19.99"
+        },
+        {
+          "name": "White Wooden Round End Table",
+          "slug": "white-wooden-round-end-table",
+          "sku": "069",
+          "price": 199.99,
+          "priceText": "$199.99"
+        },
+        {
+          "name": "Velvet Upholstered Armchair",
+          "slug": "velvet-upholstered-armchair",
+          "sku": "068",
+          "price": 125,
+          "priceText": "$125.00"
+        },
+        {
+          "name": "3-Piece White Queen Comforter Set",
+          "slug": "3-piece-white-queen-comforter-set",
+          "sku": "067",
+          "price": 130.99,
+          "priceText": "$130.99"
+        },
+        {
+          "name": "Safety Helmet",
+          "slug": "safety-helmet",
+          "sku": "066",
+          "price": 25.99,
+          "priceText": "$25.99"
+        },
+        {
+          "name": "Steel Faux Finish Paint Trowel",
+          "slug": "steel-faux-finish-paint-trowel",
+          "sku": "065",
+          "price": 9.99,
+          "priceText": "$9.99"
+        }
+      ]
+    },
+    "hardware": {
+      "key": "hardware",
+      "name": "Hardware",
+      "path": "/category/hardware",
+      "url": "https://www.shopbricks.co/category/hardware",
+      "pageTitle": "Hardware | Bricks",
+      "productsOnFirstPage": 10,
+      "minimumExpectedProducts": 10,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 22
+      },
+      "expectedProducts": [
+        {
+          "name": "2-Ton Galvanized Forged Steel Anchor Shackle",
+          "slug": "2-ton-galvanized-forged-steel-anchor-shackle",
+          "sku": "047",
+          "price": 5.99,
+          "priceText": "$5.99"
+        },
+        {
+          "name": "Pipe Wrench (8-In. Length)",
+          "slug": "pipe-wrench-8-in-length",
+          "sku": "046",
+          "price": 22.99,
+          "priceText": "$22.99"
+        },
+        {
+          "name": "25-Pk. Plastic Ribbed Head Anchor",
+          "slug": "25-pk-plastic-ribbed-head-anchor",
+          "sku": "045",
+          "price": 5.99,
+          "priceText": "$5.99"
+        },
+        {
+          "name": "4-In. Stainless Steel Nail Flat (200 Pc.)",
+          "slug": "4-in-stainless-steel-nail-flat-200-pc",
+          "sku": "044",
+          "price": 9.99,
+          "priceText": "$9.99"
+        },
+        {
+          "name": "Safety Glasses Clear Lens Yellow Frame",
+          "slug": "safety-glasses-clear-lens-yellow-frame",
+          "sku": "023",
+          "price": 9.99,
+          "priceText": "$9.99"
+        },
+        {
+          "name": "Steel Grip Claw Hammer",
+          "slug": "steel-grip-claw-hammer",
+          "sku": "010",
+          "price": 9.99,
+          "priceText": "$9.99"
+        },
+        {
+          "name": "12-Point (6-Pc.) Metric Wrench Set",
+          "slug": "12-point-6-pc-metric-wrench-set",
+          "sku": "009",
+          "price": 25.99,
+          "priceText": "$25.99"
+        },
+        {
+          "name": "96-Meter 3-Vial Aluminum Magnetic Type",
+          "slug": "96-meter-3-vial-aluminum-magnetic-type",
+          "sku": "008",
+          "price": 25,
+          "priceText": "$25.00"
+        },
+        {
+          "name": "6-Pc. Long and Short Arm Hex L-Key Set",
+          "slug": "6-pc-long-and-short-arm-hex-l-key-set",
+          "sku": "007",
+          "price": 4.8,
+          "priceText": "$4.80"
+        },
+        {
+          "name": "12-Ft. Tape Measure (1 Pack)",
+          "slug": "12-ft-tape-measure-1-pack",
+          "sku": "006",
+          "price": 9.59,
+          "priceText": "$9.59"
+        }
+      ]
+    },
+    "paint-supplies": {
+      "key": "paint-supplies",
+      "name": "Paint Supplies",
+      "path": "/category/paint-supplies",
+      "url": "https://www.shopbricks.co/category/paint-supplies",
+      "pageTitle": "Paint Supplies | Bricks",
+      "productsOnFirstPage": 8,
+      "minimumExpectedProducts": 8,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 97
+      },
+      "expectedProducts": [
+        {
+          "name": "Carbon Steel Flexible Wall Scraper",
+          "slug": "carbon-steel-flexible-wall-scraper",
+          "sku": "041",
+          "price": 4.99,
+          "priceText": "$4.99"
+        },
+        {
+          "name": "220 Aluminum Oxide Sandpaper",
+          "slug": "220-aluminum-oxide-sandpaper",
+          "sku": "040",
+          "price": 4.99,
+          "priceText": "$4.99"
+        },
+        {
+          "name": "Plastic 6-PSI HVLP Paint Sprayer",
+          "slug": "plastic-6-psi-hvlp-paint-sprayer",
+          "sku": "039",
+          "price": 99.99,
+          "priceText": "$99.99"
+        },
+        {
+          "name": "1-Gal. High Hiding Nude Paint Exterior",
+          "slug": "1-gal-high-hiding-nude-paint-exterior",
+          "sku": "038",
+          "price": 30.99,
+          "priceText": "$30.99"
+        },
+        {
+          "name": "1-Gal. High Hiding Yellow Paint Exterior",
+          "slug": "1-gal-high-hiding-yellow-paint-exterior",
+          "sku": "037",
+          "price": 15.5,
+          "priceText": "$15.50"
+        },
+        {
+          "name": "1-Gal. High Hiding White Paint Exterior",
+          "slug": "1-gal-high-hiding-white-paint-exterior",
+          "sku": "036",
+          "price": 30.99,
+          "priceText": "$30.99"
+        },
+        {
+          "name": "Paint Roller Frame and Sponge",
+          "slug": "paint-roller-frame-and-sponge",
+          "sku": "035",
+          "price": 3,
+          "priceText": "$3.00"
+        },
+        {
+          "name": "Flat Paint Brush (4-In. Width)",
+          "slug": "flat-paint-brush-4-in-width",
+          "sku": "034",
+          "price": 11.99,
+          "priceText": "$11.99"
+        }
+      ]
+    },
+    "power-tools": {
+      "key": "power-tools",
+      "name": "Power Tools",
+      "path": "/category/power-tools",
+      "url": "https://www.shopbricks.co/category/power-tools",
+      "pageTitle": "Power Tools | Bricks",
+      "productsOnFirstPage": 8,
+      "minimumExpectedProducts": 8,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 106
+      },
+      "expectedProducts": [
+        {
+          "name": "SAWRIGHT High Speed Steel Pilot Drill Bit Set",
+          "slug": "sawright-high-speed-steel-pilot-drill-bit-set",
+          "sku": "042",
+          "price": 24.99,
+          "priceText": "$24.99"
+        },
+        {
+          "name": "Corded Belt Sander Tool 7 amps 120 volt",
+          "slug": "corded-belt-sander-tool-7-amps-120-volt",
+          "sku": "033",
+          "price": 99.99,
+          "priceText": "$99.99"
+        },
+        {
+          "name": "Cordless 5 in. Sander Tool",
+          "slug": "cordless-5-in-sander-tool",
+          "sku": "032",
+          "price": 79.99,
+          "priceText": "$79.99"
+        },
+        {
+          "name": "SHAWNS 120 volt 4.5 amps Corded Jig Saw",
+          "slug": "shawns-120-volt-4-5-amps-corded-jig-saw",
+          "sku": "005",
+          "price": 129.99,
+          "priceText": "$129.99"
+        },
+        {
+          "name": "SHAWNS 20 volt. Brushed Cordless Compact Drill",
+          "slug": "shawns-20-volt-brushed-cordless-compact-drill",
+          "sku": "004",
+          "price": 65,
+          "priceText": "$65.00"
+        },
+        {
+          "name": "SAWRIGHT Cordless Compact Router Bare Tool 18 volt",
+          "slug": "sawright-cordless-compact-router-bare-tool-18-volt",
+          "sku": "003",
+          "price": 129.99,
+          "priceText": "$129.99"
+        },
+        {
+          "name": "bochy 18 volt Cordless tool Hammer Drill",
+          "slug": "bochy-18-volt-cordless-tool-hammer-drill",
+          "sku": "002",
+          "price": 129.99,
+          "priceText": "$129.99"
+        },
+        {
+          "name": "bochy Cordless Brushed Circular Saw Tool",
+          "slug": "bochy-cordless-brushed-circular-saw-tool",
+          "sku": "001",
+          "price": 129.99,
+          "priceText": "$129.99"
+        }
+      ]
+    },
+    "storage-organization": {
+      "key": "storage-organization",
+      "name": "Storage & Organization",
+      "path": "/category/storage-organization",
+      "url": "https://www.shopbricks.co/category/storage-organization",
+      "pageTitle": "Storage & Organization | Bricks",
+      "productsOnFirstPage": 8,
+      "minimumExpectedProducts": 8,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 11
+      },
+      "expectedProducts": [
+        {
+          "name": "Fabric Laundry Basket",
+          "slug": "fabric-laundry-basket",
+          "sku": "058",
+          "price": 10.99,
+          "priceText": "$10.99"
+        },
+        {
+          "name": "Plastic Laundry Basket",
+          "slug": "plastic-laundry-basket",
+          "sku": "057",
+          "price": 4.99,
+          "priceText": "$4.99"
+        },
+        {
+          "name": "Latching Stackable Storage Box",
+          "slug": "latching-stackable-storage-box",
+          "sku": "056",
+          "price": 10,
+          "priceText": "$10.00"
+        },
+        {
+          "name": "Metal Clothes Hanger",
+          "slug": "metal-clothes-hanger",
+          "sku": "055",
+          "price": 0.99,
+          "priceText": "$0.99"
+        },
+        {
+          "name": "Metal Net Basket",
+          "slug": "metal-net-basket",
+          "sku": "054",
+          "price": 9.99,
+          "priceText": "$9.99"
+        },
+        {
+          "name": "Flexible Plastic Storage Basket",
+          "slug": "flexible-plastic-storage-basket",
+          "sku": "053",
+          "price": 4.99,
+          "priceText": "$4.99"
+        },
+        {
+          "name": "Metal Basket",
+          "slug": "metal-basket",
+          "sku": "052",
+          "price": 0.5,
+          "priceText": "$0.50"
+        },
+        {
+          "name": "40-Liter Plastic Storage Container",
+          "slug": "40-liter-plastic-storage-container",
+          "sku": "051",
+          "price": 9.99,
+          "priceText": "$9.99"
+        }
+      ]
+    },
+    "building-supplies": {
+      "key": "building-supplies",
+      "name": "Building Supplies",
+      "path": "/category/building-supplies",
+      "url": "https://www.shopbricks.co/category/building-supplies",
+      "pageTitle": "Building Supplies | Bricks",
+      "productsOnFirstPage": 8,
+      "minimumExpectedProducts": 8,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 41
+      },
+      "expectedProducts": [
+        {
+          "name": "Safety Helmet",
+          "slug": "safety-helmet",
+          "sku": "066",
+          "price": 25.99,
+          "priceText": "$25.99"
+        },
+        {
+          "name": "Steel Faux Finish Paint Trowel",
+          "slug": "steel-faux-finish-paint-trowel",
+          "sku": "065",
+          "price": 9.99,
+          "priceText": "$9.99"
+        },
+        {
+          "name": "8-Ft. Fiberglass Step Ladder (225-Lb. Capacity)",
+          "slug": "8-ft-fiberglass-step-ladder-225-lb-capacity",
+          "sku": "064",
+          "price": 50,
+          "priceText": "$50.00"
+        },
+        {
+          "name": "Red Building Bricks (100 Pc.)",
+          "slug": "red-building-bricks-100-pc",
+          "sku": "063",
+          "price": 10.99,
+          "priceText": "$10.99"
+        },
+        {
+          "name": "Gray Building Bricks (100 Pc.)",
+          "slug": "gray-building-bricks-100-pc",
+          "sku": "062",
+          "price": 10.99,
+          "priceText": "$10.99"
+        },
+        {
+          "name": "Anchoring Cement (25 Lb.)",
+          "slug": "anchoring-cement-25-lb",
+          "sku": "061",
+          "price": 12.5,
+          "priceText": "$12.50"
+        },
+        {
+          "name": "Hydraulic Cement (10 Lb.)",
+          "slug": "hydraulic-cement-10-lb",
+          "sku": "060",
+          "price": 24.99,
+          "priceText": "$24.99"
+        },
+        {
+          "name": "Concrete Mix (80 Lb.)",
+          "slug": "concrete-mix-80-lb",
+          "sku": "059",
+          "price": 24.99,
+          "priceText": "$24.99"
+        }
+      ]
+    },
+    "lawn-gardening": {
+      "key": "lawn-gardening",
+      "name": "Lawn & Gardening",
+      "path": "/category/lawn-gardening",
+      "url": "https://www.shopbricks.co/category/lawn-gardening",
+      "pageTitle": "Lawn & Gardening | Bricks",
+      "productsOnFirstPage": 10,
+      "minimumExpectedProducts": 10,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 496
+      },
+      "expectedProducts": [
+        {
+          "name": "Wooden Sun Lounger",
+          "slug": "wooden-sun-lounger",
+          "sku": "043",
+          "price": 49.99,
+          "priceText": "$49.99"
+        },
+        {
+          "name": "Corded Electric Chainsaw",
+          "slug": "corded-electric-chainsaw",
+          "sku": "031",
+          "price": 75.99,
+          "priceText": "$75.99"
+        },
+        {
+          "name": "Forged Steel Grass Shears",
+          "slug": "forged-steel-grass-shears",
+          "sku": "030",
+          "price": 25.99,
+          "priceText": "$25.99"
+        },
+        {
+          "name": "50-Volt Max Brushless Cordless Electric Lawn Mower",
+          "slug": "50-volt-max-brushless-cordless-electric-lawn-mower",
+          "sku": "029",
+          "price": 299.99,
+          "priceText": "$299.99"
+        },
+        {
+          "name": "Cordless 80-Volt Electric Lawn Mower (Battery and Charger Included)",
+          "slug": "cordless-80-volt-electric-lawn-mower-battery-and-charger-included",
+          "sku": "028",
+          "price": 499.99,
+          "priceText": "$499.99"
+        },
+        {
+          "name": "Handheld Gas Leaf Blower with Vacuum Kit",
+          "slug": "handheld-gas-leaf-blower-with-vacuum-kit",
+          "sku": "027",
+          "price": 225.99,
+          "priceText": "$225.99"
+        },
+        {
+          "name": "Steel-Handle Digging Shovel",
+          "slug": "steel-handle-digging-shovel",
+          "sku": "026",
+          "price": 25.99,
+          "priceText": "$25.99"
+        },
+        {
+          "name": "Black 3-Burner Liquid Propane Gas Grill",
+          "slug": "black-3-burner-liquid-propane-gas-grill",
+          "sku": "025",
+          "price": 499.99,
+          "priceText": "$499.99"
+        },
+        {
+          "name": "20-Volt Straight Cordless String Trimmer (Battery Included)",
+          "slug": "20-volt-straight-cordless-string-trimmer-battery-included",
+          "sku": "022",
+          "price": 50,
+          "priceText": "$50.00"
+        },
+        {
+          "name": "Hand Garden Rack",
+          "slug": "hand-garden-rack",
+          "sku": "021",
+          "price": 4.99,
+          "priceText": "$4.99"
+        }
+      ]
+    },
+    "home-decor": {
+      "key": "home-decor",
+      "name": "Home & Decor",
+      "path": "/category/home-decor",
+      "url": "https://www.shopbricks.co/category/home-decor",
+      "pageTitle": "Home & Decor | Bricks",
+      "productsOnFirstPage": 9,
+      "minimumExpectedProducts": 9,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 181
+      },
+      "expectedProducts": [
+        {
+          "name": "Gray Decorative Cushion",
+          "slug": "gray-decorative-cushion",
+          "sku": "074",
+          "price": 29.99,
+          "priceText": "$29.99"
+        },
+        {
+          "name": "Colorful Wooden Cabinet",
+          "slug": "colorful-wooden-cabinet",
+          "sku": "073",
+          "price": 30,
+          "priceText": "$30.00"
+        },
+        {
+          "name": "Indoor Carpet Runner",
+          "slug": "indoor-carpet-runner",
+          "sku": "072",
+          "price": 19.99,
+          "priceText": "$19.99"
+        },
+        {
+          "name": "3-Pc. Pillow Set",
+          "slug": "3-pc-pillow-set",
+          "sku": "071",
+          "price": 19.99,
+          "priceText": "$19.99"
+        },
+        {
+          "name": "Wooden Picture Frame",
+          "slug": "wooden-picture-frame",
+          "sku": "070",
+          "price": 19.99,
+          "priceText": "$19.99"
+        },
+        {
+          "name": "White Wooden Round End Table",
+          "slug": "white-wooden-round-end-table",
+          "sku": "069",
+          "price": 199.99,
+          "priceText": "$199.99"
+        },
+        {
+          "name": "Velvet Upholstered Armchair",
+          "slug": "velvet-upholstered-armchair",
+          "sku": "068",
+          "price": 125,
+          "priceText": "$125.00"
+        },
+        {
+          "name": "3-Piece White Queen Comforter Set",
+          "slug": "3-piece-white-queen-comforter-set",
+          "sku": "067",
+          "price": 130.99,
+          "priceText": "$130.99"
+        },
+        {
+          "name": "Modern Grey Chair",
+          "slug": "modern-grey-chair",
+          "sku": "024",
+          "price": 29.99,
+          "priceText": "$29.99"
+        }
+      ]
+    },
+    "lighting-electrical": {
+      "key": "lighting-electrical",
+      "name": "Lighting & Electrical",
+      "path": "/category/lighting-electrical",
+      "url": "https://www.shopbricks.co/category/lighting-electrical",
+      "pageTitle": "Lighting & Electrical | Bricks",
+      "productsOnFirstPage": 8,
+      "minimumExpectedProducts": 8,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 60
+      },
+      "expectedProducts": [
+        {
+          "name": "60-Watt Light Bulb",
+          "slug": "60-watt-light-bulb",
+          "sku": "050",
+          "price": 0.99,
+          "priceText": "$0.99"
+        },
+        {
+          "name": "60-Watt EQ Dimmable Candle Light Bulb",
+          "slug": "60-watt-eq-dimmable-candle-light-bulb",
+          "sku": "049",
+          "price": 0.99,
+          "priceText": "$0.99"
+        },
+        {
+          "name": "Vintage 60-Watt Decorative Light Bulb",
+          "slug": "vintage-60-watt-decorative-light-bulb",
+          "sku": "048",
+          "price": 2.5,
+          "priceText": "$2.50"
+        },
+        {
+          "name": "Black Desk Lamp",
+          "slug": "black-desk-lamp",
+          "sku": "020",
+          "price": 19.99,
+          "priceText": "$19.99"
+        },
+        {
+          "name": "500-Ft. Clear Colorful Incandescent Plug-In Christmas String Lights",
+          "slug": "500-ft-clear-colorful-incandescent-plug-in-christmas-string-lights",
+          "sku": "019",
+          "price": 19.99,
+          "priceText": "$19.99"
+        },
+        {
+          "name": "Electric Water Heater Timer",
+          "slug": "electric-water-heater-timer",
+          "sku": "018",
+          "price": 24.99,
+          "priceText": "$24.99"
+        },
+        {
+          "name": "Tripod Standing Lamp",
+          "slug": "tripod-standing-lamp",
+          "sku": "017",
+          "price": 59.99,
+          "priceText": "$59.99"
+        },
+        {
+          "name": "White 3-Button Light Switch Cover",
+          "slug": "white-3-button-light-switch-cover",
+          "sku": "016",
+          "price": 1.5,
+          "priceText": "$1.50"
+        }
+      ]
+    },
+    "deals-offers": {
+      "key": "deals-offers",
+      "name": "Deals & Offers",
+      "path": "/category/deals-offers",
+      "url": "https://www.shopbricks.co/category/deals-offers",
+      "pageTitle": "Deals & Offers | Bricks",
+      "productsOnFirstPage": 10,
+      "minimumExpectedProducts": 10,
+      "priceFilter": {
+        "minimum": 0,
+        "maximum": 125
+      },
+      "expectedProducts": [
+        {
+          "name": "Colorful Wooden Cabinet",
+          "slug": "colorful-wooden-cabinet",
+          "sku": "073",
+          "price": 30,
+          "priceText": "$30.00"
+        },
+        {
+          "name": "Velvet Upholstered Armchair",
+          "slug": "velvet-upholstered-armchair",
+          "sku": "068",
+          "price": 125,
+          "priceText": "$125.00"
+        },
+        {
+          "name": "8-Ft. Fiberglass Step Ladder (225-Lb. Capacity)",
+          "slug": "8-ft-fiberglass-step-ladder-225-lb-capacity",
+          "sku": "064",
+          "price": 50,
+          "priceText": "$50.00"
+        },
+        {
+          "name": "Anchoring Cement (25 Lb.)",
+          "slug": "anchoring-cement-25-lb",
+          "sku": "061",
+          "price": 12.5,
+          "priceText": "$12.50"
+        },
+        {
+          "name": "Latching Stackable Storage Box",
+          "slug": "latching-stackable-storage-box",
+          "sku": "056",
+          "price": 10,
+          "priceText": "$10.00"
+        },
+        {
+          "name": "Metal Basket",
+          "slug": "metal-basket",
+          "sku": "052",
+          "price": 0.5,
+          "priceText": "$0.50"
+        },
+        {
+          "name": "60-Watt EQ Dimmable Candle Light Bulb",
+          "slug": "60-watt-eq-dimmable-candle-light-bulb",
+          "sku": "049",
+          "price": 0.99,
+          "priceText": "$0.99"
+        },
+        {
+          "name": "1-Gal. High Hiding Yellow Paint Exterior",
+          "slug": "1-gal-high-hiding-yellow-paint-exterior",
+          "sku": "037",
+          "price": 15.5,
+          "priceText": "$15.50"
+        },
+        {
+          "name": "Paint Roller Frame and Sponge",
+          "slug": "paint-roller-frame-and-sponge",
+          "sku": "035",
+          "price": 3,
+          "priceText": "$3.00"
+        },
+        {
+          "name": "Cordless 5 in. Sander Tool",
+          "slug": "cordless-5-in-sander-tool",
+          "sku": "032",
+          "price": 79.99,
+          "priceText": "$79.99"
+        }
+      ]
+    }
+  },
+  "products": {
+    "gray-decorative-cushion": {
+      "name": "Gray Decorative Cushion",
+      "slug": "gray-decorative-cushion",
+      "sku": "074",
+      "price": 29.99,
+      "currency": "USD",
+      "priceText": "$29.99",
+      "url": "https://www.shopbricks.co/product-page/gray-decorative-cushion",
+      "pageTitle": "Gray Decorative Cushion | Bricks",
+      "categories": [
+        "home-decor"
+      ]
+    },
+    "colorful-wooden-cabinet": {
+      "name": "Colorful Wooden Cabinet",
+      "slug": "colorful-wooden-cabinet",
+      "sku": "073",
+      "price": 30,
+      "currency": "USD",
+      "priceText": "$30.00",
+      "url": "https://www.shopbricks.co/product-page/colorful-wooden-cabinet",
+      "pageTitle": "Colorful Wooden Cabinet | Bricks",
+      "categories": [
+        "deals-offers",
+        "home-decor"
+      ]
+    },
+    "indoor-carpet-runner": {
+      "name": "Indoor Carpet Runner",
+      "slug": "indoor-carpet-runner",
+      "sku": "072",
+      "price": 19.99,
+      "currency": "USD",
+      "priceText": "$19.99",
+      "url": "https://www.shopbricks.co/product-page/indoor-carpet-runner",
+      "pageTitle": "Indoor Carpet Runner | Bricks",
+      "categories": [
+        "home-decor"
+      ]
+    },
+    "3-pc-pillow-set": {
+      "name": "3-Pc. Pillow Set",
+      "slug": "3-pc-pillow-set",
+      "sku": "071",
+      "price": 19.99,
+      "currency": "USD",
+      "priceText": "$19.99",
+      "url": "https://www.shopbricks.co/product-page/3-pc-pillow-set",
+      "pageTitle": "3-Pc. Pillow Set | Bricks",
+      "categories": [
+        "home-decor"
+      ]
+    },
+    "wooden-picture-frame": {
+      "name": "Wooden Picture Frame",
+      "slug": "wooden-picture-frame",
+      "sku": "070",
+      "price": 19.99,
+      "currency": "USD",
+      "priceText": "$19.99",
+      "url": "https://www.shopbricks.co/product-page/wooden-picture-frame",
+      "pageTitle": "Wooden Picture Frame | Bricks",
+      "categories": [
+        "home-decor"
+      ]
+    },
+    "white-wooden-round-end-table": {
+      "name": "White Wooden Round End Table",
+      "slug": "white-wooden-round-end-table",
+      "sku": "069",
+      "price": 199.99,
+      "currency": "USD",
+      "priceText": "$199.99",
+      "url": "https://www.shopbricks.co/product-page/white-wooden-round-end-table",
+      "pageTitle": "White Wooden Round End Table | Bricks",
+      "categories": [
+        "home-decor"
+      ]
+    },
+    "velvet-upholstered-armchair": {
+      "name": "Velvet Upholstered Armchair",
+      "slug": "velvet-upholstered-armchair",
+      "sku": "068",
+      "price": 125,
+      "currency": "USD",
+      "priceText": "$125.00",
+      "url": "https://www.shopbricks.co/product-page/velvet-upholstered-armchair",
+      "pageTitle": "Velvet Upholstered Armchair | Bricks",
+      "categories": [
+        "deals-offers",
+        "home-decor"
+      ]
+    },
+    "3-piece-white-queen-comforter-set": {
+      "name": "3-Piece White Queen Comforter Set",
+      "slug": "3-piece-white-queen-comforter-set",
+      "sku": "067",
+      "price": 130.99,
+      "currency": "USD",
+      "priceText": "$130.99",
+      "url": "https://www.shopbricks.co/product-page/3-piece-white-queen-comforter-set",
+      "pageTitle": "3-Piece White Queen Comforter Set | Bricks",
+      "categories": [
+        "home-decor"
+      ]
+    },
+    "safety-helmet": {
+      "name": "Safety Helmet",
+      "slug": "safety-helmet",
+      "sku": "066",
+      "price": 25.99,
+      "currency": "USD",
+      "priceText": "$25.99",
+      "url": "https://www.shopbricks.co/product-page/safety-helmet",
+      "pageTitle": "Safety Helmet | Bricks",
+      "categories": [
+        "building-supplies"
+      ]
+    },
+    "steel-faux-finish-paint-trowel": {
+      "name": "Steel Faux Finish Paint Trowel",
+      "slug": "steel-faux-finish-paint-trowel",
+      "sku": "065",
+      "price": 9.99,
+      "currency": "USD",
+      "priceText": "$9.99",
+      "url": "https://www.shopbricks.co/product-page/steel-faux-finish-paint-trowel",
+      "pageTitle": "Steel Faux Finish Paint Trowel | Bricks",
+      "categories": [
+        "building-supplies"
+      ]
+    },
+    "8-ft-fiberglass-step-ladder-225-lb-capacity": {
+      "name": "8-Ft. Fiberglass Step Ladder (225-Lb. Capacity)",
+      "slug": "8-ft-fiberglass-step-ladder-225-lb-capacity",
+      "sku": "064",
+      "price": 50,
+      "currency": "USD",
+      "priceText": "$50.00",
+      "url": "https://www.shopbricks.co/product-page/8-ft-fiberglass-step-ladder-225-lb-capacity",
+      "pageTitle": "8-Ft. Fiberglass Step Ladder (225-Lb. Capacity) | Bricks",
+      "categories": [
+        "building-supplies",
+        "deals-offers"
+      ]
+    },
+    "red-building-bricks-100-pc": {
+      "name": "Red Building Bricks (100 Pc.)",
+      "slug": "red-building-bricks-100-pc",
+      "sku": "063",
+      "price": 10.99,
+      "currency": "USD",
+      "priceText": "$10.99",
+      "url": "https://www.shopbricks.co/product-page/red-building-bricks-100-pc",
+      "pageTitle": "Red Building Bricks (100 Pc.) | Bricks",
+      "categories": [
+        "building-supplies"
+      ]
+    },
+    "gray-building-bricks-100-pc": {
+      "name": "Gray Building Bricks (100 Pc.)",
+      "slug": "gray-building-bricks-100-pc",
+      "sku": "062",
+      "price": 10.99,
+      "currency": "USD",
+      "priceText": "$10.99",
+      "url": "https://www.shopbricks.co/product-page/gray-building-bricks-100-pc",
+      "pageTitle": "Gray Building Bricks (100 Pc.) | Bricks",
+      "categories": [
+        "building-supplies"
+      ]
+    },
+    "anchoring-cement-25-lb": {
+      "name": "Anchoring Cement (25 Lb.)",
+      "slug": "anchoring-cement-25-lb",
+      "sku": "061",
+      "price": 12.5,
+      "currency": "USD",
+      "priceText": "$12.50",
+      "url": "https://www.shopbricks.co/product-page/anchoring-cement-25-lb",
+      "pageTitle": "Anchoring Cement (25 Lb.) | Bricks",
+      "categories": [
+        "building-supplies",
+        "deals-offers"
+      ]
+    },
+    "hydraulic-cement-10-lb": {
+      "name": "Hydraulic Cement (10 Lb.)",
+      "slug": "hydraulic-cement-10-lb",
+      "sku": "060",
+      "price": 24.99,
+      "currency": "USD",
+      "priceText": "$24.99",
+      "url": "https://www.shopbricks.co/product-page/hydraulic-cement-10-lb",
+      "pageTitle": "Hydraulic Cement (10 Lb.) | Bricks",
+      "categories": [
+        "building-supplies"
+      ]
+    },
+    "concrete-mix-80-lb": {
+      "name": "Concrete Mix (80 Lb.)",
+      "slug": "concrete-mix-80-lb",
+      "sku": "059",
+      "price": 24.99,
+      "currency": "USD",
+      "priceText": "$24.99",
+      "url": "https://www.shopbricks.co/product-page/concrete-mix-80-lb",
+      "pageTitle": "Concrete Mix (80 Lb.) | Bricks",
+      "categories": [
+        "building-supplies"
+      ]
+    },
+    "latching-stackable-storage-box": {
+      "name": "Latching Stackable Storage Box",
+      "slug": "latching-stackable-storage-box",
+      "sku": "056",
+      "price": 10,
+      "currency": "USD",
+      "priceText": "$10.00",
+      "url": "https://www.shopbricks.co/product-page/latching-stackable-storage-box",
+      "pageTitle": "Latching Stackable Storage Box | Bricks",
+      "categories": [
+        "deals-offers",
+        "storage-organization"
+      ]
+    },
+    "metal-basket": {
+      "name": "Metal Basket",
+      "slug": "metal-basket",
+      "sku": "052",
+      "price": 0.5,
+      "currency": "USD",
+      "priceText": "$0.50",
+      "url": "https://www.shopbricks.co/product-page/metal-basket",
+      "pageTitle": "Metal Basket | Bricks",
+      "categories": [
+        "deals-offers",
+        "storage-organization"
+      ]
+    },
+    "60-watt-eq-dimmable-candle-light-bulb": {
+      "name": "60-Watt EQ Dimmable Candle Light Bulb",
+      "slug": "60-watt-eq-dimmable-candle-light-bulb",
+      "sku": "049",
+      "price": 0.99,
+      "currency": "USD",
+      "priceText": "$0.99",
+      "url": "https://www.shopbricks.co/product-page/60-watt-eq-dimmable-candle-light-bulb",
+      "pageTitle": "60-Watt EQ Dimmable Candle Light Bulb | Bricks",
+      "categories": [
+        "deals-offers",
+        "lighting-electrical"
+      ]
+    },
+    "1-gal-high-hiding-yellow-paint-exterior": {
+      "name": "1-Gal. High Hiding Yellow Paint Exterior",
+      "slug": "1-gal-high-hiding-yellow-paint-exterior",
+      "sku": "037",
+      "price": 15.5,
+      "currency": "USD",
+      "priceText": "$15.50",
+      "url": "https://www.shopbricks.co/product-page/1-gal-high-hiding-yellow-paint-exterior",
+      "pageTitle": "1-Gal. High Hiding Yellow Paint Exterior | Bricks",
+      "categories": [
+        "deals-offers",
+        "paint-supplies"
+      ]
+    },
+    "paint-roller-frame-and-sponge": {
+      "name": "Paint Roller Frame and Sponge",
+      "slug": "paint-roller-frame-and-sponge",
+      "sku": "035",
+      "price": 3,
+      "currency": "USD",
+      "priceText": "$3.00",
+      "url": "https://www.shopbricks.co/product-page/paint-roller-frame-and-sponge",
+      "pageTitle": "Paint Roller Frame and Sponge | Bricks",
+      "categories": [
+        "deals-offers",
+        "paint-supplies"
+      ]
+    },
+    "cordless-5-in-sander-tool": {
+      "name": "Cordless 5 in. Sander Tool",
+      "slug": "cordless-5-in-sander-tool",
+      "sku": "032",
+      "price": 79.99,
+      "currency": "USD",
+      "priceText": "$79.99",
+      "url": "https://www.shopbricks.co/product-page/cordless-5-in-sander-tool",
+      "pageTitle": "Cordless 5 in. Sander Tool | Bricks",
+      "categories": [
+        "deals-offers",
+        "power-tools"
+      ]
+    },
+    "2-ton-galvanized-forged-steel-anchor-shackle": {
+      "name": "2-Ton Galvanized Forged Steel Anchor Shackle",
+      "slug": "2-ton-galvanized-forged-steel-anchor-shackle",
+      "sku": "047",
+      "price": 5.99,
+      "currency": "USD",
+      "priceText": "$5.99",
+      "url": "https://www.shopbricks.co/product-page/2-ton-galvanized-forged-steel-anchor-shackle",
+      "pageTitle": "2-Ton Galvanized Forged Steel Anchor Shackle | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "pipe-wrench-8-in-length": {
+      "name": "Pipe Wrench (8-In. Length)",
+      "slug": "pipe-wrench-8-in-length",
+      "sku": "046",
+      "price": 22.99,
+      "currency": "USD",
+      "priceText": "$22.99",
+      "url": "https://www.shopbricks.co/product-page/pipe-wrench-8-in-length",
+      "pageTitle": "Pipe Wrench (8-In. Length) | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "25-pk-plastic-ribbed-head-anchor": {
+      "name": "25-Pk. Plastic Ribbed Head Anchor",
+      "slug": "25-pk-plastic-ribbed-head-anchor",
+      "sku": "045",
+      "price": 5.99,
+      "currency": "USD",
+      "priceText": "$5.99",
+      "url": "https://www.shopbricks.co/product-page/25-pk-plastic-ribbed-head-anchor",
+      "pageTitle": "25-Pk. Plastic Ribbed Head Anchor | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "4-in-stainless-steel-nail-flat-200-pc": {
+      "name": "4-In. Stainless Steel Nail Flat (200 Pc.)",
+      "slug": "4-in-stainless-steel-nail-flat-200-pc",
+      "sku": "044",
+      "price": 9.99,
+      "currency": "USD",
+      "priceText": "$9.99",
+      "url": "https://www.shopbricks.co/product-page/4-in-stainless-steel-nail-flat-200-pc",
+      "pageTitle": "4-In. Stainless Steel Nail Flat (200 Pc.) | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "safety-glasses-clear-lens-yellow-frame": {
+      "name": "Safety Glasses Clear Lens Yellow Frame",
+      "slug": "safety-glasses-clear-lens-yellow-frame",
+      "sku": "023",
+      "price": 9.99,
+      "currency": "USD",
+      "priceText": "$9.99",
+      "url": "https://www.shopbricks.co/product-page/safety-glasses-clear-lens-yellow-frame",
+      "pageTitle": "Safety Glasses Clear Lens Yellow Frame | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "steel-grip-claw-hammer": {
+      "name": "Steel Grip Claw Hammer",
+      "slug": "steel-grip-claw-hammer",
+      "sku": "010",
+      "price": 9.99,
+      "currency": "USD",
+      "priceText": "$9.99",
+      "url": "https://www.shopbricks.co/product-page/steel-grip-claw-hammer",
+      "pageTitle": "Steel Grip Claw Hammer | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "12-point-6-pc-metric-wrench-set": {
+      "name": "12-Point (6-Pc.) Metric Wrench Set",
+      "slug": "12-point-6-pc-metric-wrench-set",
+      "sku": "009",
+      "price": 25.99,
+      "currency": "USD",
+      "priceText": "$25.99",
+      "url": "https://www.shopbricks.co/product-page/12-point-6-pc-metric-wrench-set",
+      "pageTitle": "12-Point (6-Pc.) Metric Wrench Set | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "96-meter-3-vial-aluminum-magnetic-type": {
+      "name": "96-Meter 3-Vial Aluminum Magnetic Type",
+      "slug": "96-meter-3-vial-aluminum-magnetic-type",
+      "sku": "008",
+      "price": 25,
+      "currency": "USD",
+      "priceText": "$25.00",
+      "url": "https://www.shopbricks.co/product-page/96-meter-3-vial-aluminum-magnetic-type",
+      "pageTitle": "96-Meter 3-Vial Aluminum Magnetic Type | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "6-pc-long-and-short-arm-hex-l-key-set": {
+      "name": "6-Pc. Long and Short Arm Hex L-Key Set",
+      "slug": "6-pc-long-and-short-arm-hex-l-key-set",
+      "sku": "007",
+      "price": 4.8,
+      "currency": "USD",
+      "priceText": "$4.80",
+      "url": "https://www.shopbricks.co/product-page/6-pc-long-and-short-arm-hex-l-key-set",
+      "pageTitle": "6-Pc. Long and Short Arm Hex L-Key Set | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "12-ft-tape-measure-1-pack": {
+      "name": "12-Ft. Tape Measure (1 Pack)",
+      "slug": "12-ft-tape-measure-1-pack",
+      "sku": "006",
+      "price": 9.59,
+      "currency": "USD",
+      "priceText": "$9.59",
+      "url": "https://www.shopbricks.co/product-page/12-ft-tape-measure-1-pack",
+      "pageTitle": "12-Ft. Tape Measure (1 Pack) | Bricks",
+      "categories": [
+        "hardware"
+      ]
+    },
+    "modern-grey-chair": {
+      "name": "Modern Grey Chair",
+      "slug": "modern-grey-chair",
+      "sku": "024",
+      "price": 29.99,
+      "currency": "USD",
+      "priceText": "$29.99",
+      "url": "https://www.shopbricks.co/product-page/modern-grey-chair",
+      "pageTitle": "Modern Grey Chair | Bricks",
+      "categories": [
+        "home-decor"
+      ]
+    },
+    "wooden-sun-lounger": {
+      "name": "Wooden Sun Lounger",
+      "slug": "wooden-sun-lounger",
+      "sku": "043",
+      "price": 49.99,
+      "currency": "USD",
+      "priceText": "$49.99",
+      "url": "https://www.shopbricks.co/product-page/wooden-sun-lounger",
+      "pageTitle": "Wooden Sun Lounger | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "corded-electric-chainsaw": {
+      "name": "Corded Electric Chainsaw",
+      "slug": "corded-electric-chainsaw",
+      "sku": "031",
+      "price": 75.99,
+      "currency": "USD",
+      "priceText": "$75.99",
+      "url": "https://www.shopbricks.co/product-page/corded-electric-chainsaw",
+      "pageTitle": "Corded Electric Chainsaw | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "forged-steel-grass-shears": {
+      "name": "Forged Steel Grass Shears",
+      "slug": "forged-steel-grass-shears",
+      "sku": "030",
+      "price": 25.99,
+      "currency": "USD",
+      "priceText": "$25.99",
+      "url": "https://www.shopbricks.co/product-page/forged-steel-grass-shears",
+      "pageTitle": "Forged Steel Grass Shears | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "50-volt-max-brushless-cordless-electric-lawn-mower": {
+      "name": "50-Volt Max Brushless Cordless Electric Lawn Mower",
+      "slug": "50-volt-max-brushless-cordless-electric-lawn-mower",
+      "sku": "029",
+      "price": 299.99,
+      "currency": "USD",
+      "priceText": "$299.99",
+      "url": "https://www.shopbricks.co/product-page/50-volt-max-brushless-cordless-electric-lawn-mower",
+      "pageTitle": "50-Volt Max Brushless Cordless Electric Lawn Mower | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "cordless-80-volt-electric-lawn-mower-battery-and-charger-included": {
+      "name": "Cordless 80-Volt Electric Lawn Mower (Battery and Charger Included)",
+      "slug": "cordless-80-volt-electric-lawn-mower-battery-and-charger-included",
+      "sku": "028",
+      "price": 499.99,
+      "currency": "USD",
+      "priceText": "$499.99",
+      "url": "https://www.shopbricks.co/product-page/cordless-80-volt-electric-lawn-mower-battery-and-charger-included",
+      "pageTitle": "Cordless 80-Volt Electric Lawn Mower (Battery and Charger Included) | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "handheld-gas-leaf-blower-with-vacuum-kit": {
+      "name": "Handheld Gas Leaf Blower with Vacuum Kit",
+      "slug": "handheld-gas-leaf-blower-with-vacuum-kit",
+      "sku": "027",
+      "price": 225.99,
+      "currency": "USD",
+      "priceText": "$225.99",
+      "url": "https://www.shopbricks.co/product-page/handheld-gas-leaf-blower-with-vacuum-kit",
+      "pageTitle": "Handheld Gas Leaf Blower with Vacuum Kit | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "steel-handle-digging-shovel": {
+      "name": "Steel-Handle Digging Shovel",
+      "slug": "steel-handle-digging-shovel",
+      "sku": "026",
+      "price": 25.99,
+      "currency": "USD",
+      "priceText": "$25.99",
+      "url": "https://www.shopbricks.co/product-page/steel-handle-digging-shovel",
+      "pageTitle": "Steel-Handle Digging Shovel | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "black-3-burner-liquid-propane-gas-grill": {
+      "name": "Black 3-Burner Liquid Propane Gas Grill",
+      "slug": "black-3-burner-liquid-propane-gas-grill",
+      "sku": "025",
+      "price": 499.99,
+      "currency": "USD",
+      "priceText": "$499.99",
+      "url": "https://www.shopbricks.co/product-page/black-3-burner-liquid-propane-gas-grill",
+      "pageTitle": "Black 3-Burner Liquid Propane Gas Grill | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "20-volt-straight-cordless-string-trimmer-battery-included": {
+      "name": "20-Volt Straight Cordless String Trimmer (Battery Included)",
+      "slug": "20-volt-straight-cordless-string-trimmer-battery-included",
+      "sku": "022",
+      "price": 50,
+      "currency": "USD",
+      "priceText": "$50.00",
+      "url": "https://www.shopbricks.co/product-page/20-volt-straight-cordless-string-trimmer-battery-included",
+      "pageTitle": "20-Volt Straight Cordless String Trimmer (Battery Included) | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "hand-garden-rack": {
+      "name": "Hand Garden Rack",
+      "slug": "hand-garden-rack",
+      "sku": "021",
+      "price": 4.99,
+      "currency": "USD",
+      "priceText": "$4.99",
+      "url": "https://www.shopbricks.co/product-page/hand-garden-rack",
+      "pageTitle": "Hand Garden Rack | Bricks",
+      "categories": [
+        "lawn-gardening"
+      ]
+    },
+    "60-watt-light-bulb": {
+      "name": "60-Watt Light Bulb",
+      "slug": "60-watt-light-bulb",
+      "sku": "050",
+      "price": 0.99,
+      "currency": "USD",
+      "priceText": "$0.99",
+      "url": "https://www.shopbricks.co/product-page/60-watt-light-bulb",
+      "pageTitle": "60-Watt Light Bulb | Bricks",
+      "categories": [
+        "lighting-electrical"
+      ]
+    },
+    "vintage-60-watt-decorative-light-bulb": {
+      "name": "Vintage 60-Watt Decorative Light Bulb",
+      "slug": "vintage-60-watt-decorative-light-bulb",
+      "sku": "048",
+      "price": 2.5,
+      "currency": "USD",
+      "priceText": "$2.50",
+      "url": "https://www.shopbricks.co/product-page/vintage-60-watt-decorative-light-bulb",
+      "pageTitle": "Vintage 60-Watt Decorative Light Bulb | Bricks",
+      "categories": [
+        "lighting-electrical"
+      ]
+    },
+    "black-desk-lamp": {
+      "name": "Black Desk Lamp",
+      "slug": "black-desk-lamp",
+      "sku": "020",
+      "price": 19.99,
+      "currency": "USD",
+      "priceText": "$19.99",
+      "url": "https://www.shopbricks.co/product-page/black-desk-lamp",
+      "pageTitle": "Black Desk Lamp | Bricks",
+      "categories": [
+        "lighting-electrical"
+      ]
+    },
+    "500-ft-clear-colorful-incandescent-plug-in-christmas-string-lights": {
+      "name": "500-Ft. Clear Colorful Incandescent Plug-In Christmas String Lights",
+      "slug": "500-ft-clear-colorful-incandescent-plug-in-christmas-string-lights",
+      "sku": "019",
+      "price": 19.99,
+      "currency": "USD",
+      "priceText": "$19.99",
+      "url": "https://www.shopbricks.co/product-page/500-ft-clear-colorful-incandescent-plug-in-christmas-string-lights",
+      "pageTitle": "500-Ft. Clear Colorful Incandescent Plug-In Christmas String Lights | Bricks",
+      "categories": [
+        "lighting-electrical"
+      ]
+    },
+    "electric-water-heater-timer": {
+      "name": "Electric Water Heater Timer",
+      "slug": "electric-water-heater-timer",
+      "sku": "018",
+      "price": 24.99,
+      "currency": "USD",
+      "priceText": "$24.99",
+      "url": "https://www.shopbricks.co/product-page/electric-water-heater-timer",
+      "pageTitle": "Electric Water Heater Timer | Bricks",
+      "categories": [
+        "lighting-electrical"
+      ]
+    },
+    "tripod-standing-lamp": {
+      "name": "Tripod Standing Lamp",
+      "slug": "tripod-standing-lamp",
+      "sku": "017",
+      "price": 59.99,
+      "currency": "USD",
+      "priceText": "$59.99",
+      "url": "https://www.shopbricks.co/product-page/tripod-standing-lamp",
+      "pageTitle": "Tripod Standing Lamp | Bricks",
+      "categories": [
+        "lighting-electrical"
+      ]
+    },
+    "white-3-button-light-switch-cover": {
+      "name": "White 3-Button Light Switch Cover",
+      "slug": "white-3-button-light-switch-cover",
+      "sku": "016",
+      "price": 1.5,
+      "currency": "USD",
+      "priceText": "$1.50",
+      "url": "https://www.shopbricks.co/product-page/white-3-button-light-switch-cover",
+      "pageTitle": "White 3-Button Light Switch Cover | Bricks",
+      "categories": [
+        "lighting-electrical"
+      ]
+    },
+    "carbon-steel-flexible-wall-scraper": {
+      "name": "Carbon Steel Flexible Wall Scraper",
+      "slug": "carbon-steel-flexible-wall-scraper",
+      "sku": "041",
+      "price": 4.99,
+      "currency": "USD",
+      "priceText": "$4.99",
+      "url": "https://www.shopbricks.co/product-page/carbon-steel-flexible-wall-scraper",
+      "pageTitle": "Carbon Steel Flexible Wall Scraper | Bricks",
+      "categories": [
+        "paint-supplies"
+      ]
+    },
+    "220-aluminum-oxide-sandpaper": {
+      "name": "220 Aluminum Oxide Sandpaper",
+      "slug": "220-aluminum-oxide-sandpaper",
+      "sku": "040",
+      "price": 4.99,
+      "currency": "USD",
+      "priceText": "$4.99",
+      "url": "https://www.shopbricks.co/product-page/220-aluminum-oxide-sandpaper",
+      "pageTitle": "220 Aluminum Oxide Sandpaper | Bricks",
+      "categories": [
+        "paint-supplies"
+      ]
+    },
+    "plastic-6-psi-hvlp-paint-sprayer": {
+      "name": "Plastic 6-PSI HVLP Paint Sprayer",
+      "slug": "plastic-6-psi-hvlp-paint-sprayer",
+      "sku": "039",
+      "price": 99.99,
+      "currency": "USD",
+      "priceText": "$99.99",
+      "url": "https://www.shopbricks.co/product-page/plastic-6-psi-hvlp-paint-sprayer",
+      "pageTitle": "Plastic 6-PSI HVLP Paint Sprayer | Bricks",
+      "categories": [
+        "paint-supplies"
+      ]
+    },
+    "1-gal-high-hiding-nude-paint-exterior": {
+      "name": "1-Gal. High Hiding Nude Paint Exterior",
+      "slug": "1-gal-high-hiding-nude-paint-exterior",
+      "sku": "038",
+      "price": 30.99,
+      "currency": "USD",
+      "priceText": "$30.99",
+      "url": "https://www.shopbricks.co/product-page/1-gal-high-hiding-nude-paint-exterior",
+      "pageTitle": "1-Gal. High Hiding Nude Paint Exterior | Bricks",
+      "categories": [
+        "paint-supplies"
+      ]
+    },
+    "1-gal-high-hiding-white-paint-exterior": {
+      "name": "1-Gal. High Hiding White Paint Exterior",
+      "slug": "1-gal-high-hiding-white-paint-exterior",
+      "sku": "036",
+      "price": 30.99,
+      "currency": "USD",
+      "priceText": "$30.99",
+      "url": "https://www.shopbricks.co/product-page/1-gal-high-hiding-white-paint-exterior",
+      "pageTitle": "1-Gal. High Hiding White Paint Exterior | Bricks",
+      "categories": [
+        "paint-supplies"
+      ]
+    },
+    "flat-paint-brush-4-in-width": {
+      "name": "Flat Paint Brush (4-In. Width)",
+      "slug": "flat-paint-brush-4-in-width",
+      "sku": "034",
+      "price": 11.99,
+      "currency": "USD",
+      "priceText": "$11.99",
+      "url": "https://www.shopbricks.co/product-page/flat-paint-brush-4-in-width",
+      "pageTitle": "Flat Paint Brush (4-In. Width) | Bricks",
+      "categories": [
+        "paint-supplies"
+      ]
+    },
+    "sawright-high-speed-steel-pilot-drill-bit-set": {
+      "name": "SAWRIGHT High Speed Steel Pilot Drill Bit Set",
+      "slug": "sawright-high-speed-steel-pilot-drill-bit-set",
+      "sku": "042",
+      "price": 24.99,
+      "currency": "USD",
+      "priceText": "$24.99",
+      "url": "https://www.shopbricks.co/product-page/sawright-high-speed-steel-pilot-drill-bit-set",
+      "pageTitle": "SAWRIGHT High Speed Steel Pilot Drill Bit Set | Bricks",
+      "categories": [
+        "power-tools"
+      ]
+    },
+    "corded-belt-sander-tool-7-amps-120-volt": {
+      "name": "Corded Belt Sander Tool 7 amps 120 volt",
+      "slug": "corded-belt-sander-tool-7-amps-120-volt",
+      "sku": "033",
+      "price": 99.99,
+      "currency": "USD",
+      "priceText": "$99.99",
+      "url": "https://www.shopbricks.co/product-page/corded-belt-sander-tool-7-amps-120-volt",
+      "pageTitle": "Corded Belt Sander Tool 7 amps 120 volt | Bricks",
+      "categories": [
+        "power-tools"
+      ]
+    },
+    "shawns-120-volt-4-5-amps-corded-jig-saw": {
+      "name": "SHAWNS 120 volt 4.5 amps Corded Jig Saw",
+      "slug": "shawns-120-volt-4-5-amps-corded-jig-saw",
+      "sku": "005",
+      "price": 129.99,
+      "currency": "USD",
+      "priceText": "$129.99",
+      "url": "https://www.shopbricks.co/product-page/shawns-120-volt-4-5-amps-corded-jig-saw",
+      "pageTitle": "SHAWNS 120 volt 4.5 amps Corded Jig Saw | Bricks",
+      "categories": [
+        "power-tools"
+      ]
+    },
+    "shawns-20-volt-brushed-cordless-compact-drill": {
+      "name": "SHAWNS 20 volt. Brushed Cordless Compact Drill",
+      "slug": "shawns-20-volt-brushed-cordless-compact-drill",
+      "sku": "004",
+      "price": 65,
+      "currency": "USD",
+      "priceText": "$65.00",
+      "url": "https://www.shopbricks.co/product-page/shawns-20-volt-brushed-cordless-compact-drill",
+      "pageTitle": "SHAWNS 20 volt. Brushed Cordless Compact Drill | Bricks",
+      "categories": [
+        "power-tools"
+      ]
+    },
+    "sawright-cordless-compact-router-bare-tool-18-volt": {
+      "name": "SAWRIGHT Cordless Compact Router Bare Tool 18 volt",
+      "slug": "sawright-cordless-compact-router-bare-tool-18-volt",
+      "sku": "003",
+      "price": 129.99,
+      "currency": "USD",
+      "priceText": "$129.99",
+      "url": "https://www.shopbricks.co/product-page/sawright-cordless-compact-router-bare-tool-18-volt",
+      "pageTitle": "SAWRIGHT Cordless Compact Router Bare Tool 18 volt | Bricks",
+      "categories": [
+        "power-tools"
+      ]
+    },
+    "bochy-18-volt-cordless-tool-hammer-drill": {
+      "name": "bochy 18 volt Cordless tool Hammer Drill",
+      "slug": "bochy-18-volt-cordless-tool-hammer-drill",
+      "sku": "002",
+      "price": 129.99,
+      "currency": "USD",
+      "priceText": "$129.99",
+      "url": "https://www.shopbricks.co/product-page/bochy-18-volt-cordless-tool-hammer-drill",
+      "pageTitle": "bochy 18 volt Cordless tool Hammer Drill | Bricks",
+      "categories": [
+        "power-tools"
+      ]
+    },
+    "bochy-cordless-brushed-circular-saw-tool": {
+      "name": "bochy Cordless Brushed Circular Saw Tool",
+      "slug": "bochy-cordless-brushed-circular-saw-tool",
+      "sku": "001",
+      "price": 129.99,
+      "currency": "USD",
+      "priceText": "$129.99",
+      "url": "https://www.shopbricks.co/product-page/bochy-cordless-brushed-circular-saw-tool",
+      "pageTitle": "bochy Cordless Brushed Circular Saw Tool | Bricks",
+      "categories": [
+        "power-tools"
+      ]
+    },
+    "fabric-laundry-basket": {
+      "name": "Fabric Laundry Basket",
+      "slug": "fabric-laundry-basket",
+      "sku": "058",
+      "price": 10.99,
+      "currency": "USD",
+      "priceText": "$10.99",
+      "url": "https://www.shopbricks.co/product-page/fabric-laundry-basket",
+      "pageTitle": "Fabric Laundry Basket | Bricks",
+      "categories": [
+        "storage-organization"
+      ]
+    },
+    "plastic-laundry-basket": {
+      "name": "Plastic Laundry Basket",
+      "slug": "plastic-laundry-basket",
+      "sku": "057",
+      "price": 4.99,
+      "currency": "USD",
+      "priceText": "$4.99",
+      "url": "https://www.shopbricks.co/product-page/plastic-laundry-basket",
+      "pageTitle": "Plastic Laundry Basket | Bricks",
+      "categories": [
+        "storage-organization"
+      ]
+    },
+    "metal-clothes-hanger": {
+      "name": "Metal Clothes Hanger",
+      "slug": "metal-clothes-hanger",
+      "sku": "055",
+      "price": 0.99,
+      "currency": "USD",
+      "priceText": "$0.99",
+      "url": "https://www.shopbricks.co/product-page/metal-clothes-hanger",
+      "pageTitle": "Metal Clothes Hanger | Bricks",
+      "categories": [
+        "storage-organization"
+      ]
+    },
+    "metal-net-basket": {
+      "name": "Metal Net Basket",
+      "slug": "metal-net-basket",
+      "sku": "054",
+      "price": 9.99,
+      "currency": "USD",
+      "priceText": "$9.99",
+      "url": "https://www.shopbricks.co/product-page/metal-net-basket",
+      "pageTitle": "Metal Net Basket | Bricks",
+      "categories": [
+        "storage-organization"
+      ]
+    },
+    "flexible-plastic-storage-basket": {
+      "name": "Flexible Plastic Storage Basket",
+      "slug": "flexible-plastic-storage-basket",
+      "sku": "053",
+      "price": 4.99,
+      "currency": "USD",
+      "priceText": "$4.99",
+      "url": "https://www.shopbricks.co/product-page/flexible-plastic-storage-basket",
+      "pageTitle": "Flexible Plastic Storage Basket | Bricks",
+      "categories": [
+        "storage-organization"
+      ]
+    },
+    "40-liter-plastic-storage-container": {
+      "name": "40-Liter Plastic Storage Container",
+      "slug": "40-liter-plastic-storage-container",
+      "sku": "051",
+      "price": 9.99,
+      "currency": "USD",
+      "priceText": "$9.99",
+      "url": "https://www.shopbricks.co/product-page/40-liter-plastic-storage-container",
+      "pageTitle": "40-Liter Plastic Storage Container | Bricks",
+      "categories": [
+        "storage-organization"
+      ]
+    }
+  },
+  "productPage": {
+    "addToCartButtonText": "Add to Cart",
+    "priceLabel": "Price",
+    "skuLabelPrefix": "SKU:",
+    "productInfoSectionTitle": "PRODUCT INFO",
+    "aiAssistantLabel": "Bricks AI Assistant",
+    "aiAssistantTimeoutMs": 30000
+  },
+  "homePageContent": {
+    "sectionHeadings": [
+      "SHOP BY CATEGORY",
+      "SHOP POWER TOOLS",
+      "SHOP HARDWARE",
+      "TRENDING NOW"
+    ],
+    "shopByCategoryTiles": [
+      "HARDWARE",
+      "PAINT SUPPLIES",
+      "POWER TOOLS",
+      "BUILDING SUPPLIES",
+      "ELECTRICAL"
+    ],
+    "trendingNowProducts": [
+      "8-Ft. Fiberglass Step Ladder (225-Lb. Capacity)",
+      "Black 3-Burner Liquid Propane Gas Grill",
+      "Modern Grey Chair",
+      "Safety Glasses Clear Lens Yellow Frame",
+      "20-Volt Straight Cordless String Trimmer (Battery Included)"
+    ],
+    "freeShippingMessage": "Save time and money with free shipping on orders over $45"
+  },
+  "homepage": {
+    "shopByCategoryHeading": "Shop By Category",
+    "categories": [
+      "Shop Power Tools",
+      "Shop Hardware"
+    ],
+    "trustedBrandsHeading": "Our Trusted Brands",
+    "sectionHeadings": [
+      "Shop By Category",
+      "Shop Power Tools",
+      "Shop Hardware",
+      "Our Trusted Brands"
+    ]
+  },
+  "credentials": {
+    "username": "import-test-user",
+    "password": "import-test-pa**word"
+  },
+  "testCases": {
+    "checkout": {
+      "startUrl": "https://www.shopbricks.co/",
+      "categoryKey": "hardware",
+      "categoryName": "Hardware",
+      "product": {
+        "searchTerm": "Pipe Wrench",
+        "name": "Pipe Wrench (8-In. Length)",
+        "slug": "pipe-wrench-8-in-length",
+        "sku": "046",
+        "price": 22.99,
+        "priceText": "$22.99"
+      },
+      "customer": {
+        "email": "test@example.com",
+        "firstName": "John",
+        "lastName": "Doe",
+        "address1": "123 Main St",
+        "city": "New York",
+        "country": "United States",
+        "region": "Alaska",
+        "zip": "10001",
+        "phone": "2025550123"
+      },
+      "expected": {
+        "thankYouHeading": "Thank You"
+      }
+    },
+    "dealsOffersFiltering": {
+      "startUrl": "https://www.shopbricks.co/",
+      "categoryKey": "deals-offers",
+      "browseByLink": "All Products",
+      "minimumProducts": 10,
+      "loadMoreClicks": 3,
+      "priceFilter": {
+        "minimum": 0,
+        "firstMaximum": 300,
+        "secondMaximum": 100
+      }
+    },
+    "categoryCatalogueValidation": {
+      "categoryKeys": [
+        "hardware",
+        "power-tools",
+        "lighting-electrical",
+        "deals-offers"
+      ]
+    },
+    "productDetailValidation": {
+      "slugs": [
+        "pipe-wrench-8-in-length",
+        "steel-grip-claw-hammer",
+        "black-desk-lamp",
+        "shawns-20-volt-brushed-cordless-compact-drill"
+      ]
+    },
+    "storefrontNavigationValidation": {
+      "categoryKey": "all-products"
+    }
+  }
+}
