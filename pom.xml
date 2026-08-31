@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>co.shopbricks</groupId>
+    <artifactId>selenium-cucumber-java</artifactId>
+    <version>1.8.1</version>
+    <packaging>jar</packaging>
+
+    <name>Shopbricks Selenium BDD Framework</name>
+    <description>JavaScript browser automation framework using official selenium-webdriver and cucumber-js, ported to Java</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>17</maven.compiler.release>
+
+        <selenium.version>4.27.0</selenium.version>
+        <cucumber.version>7.20.1</cucumber.version>
+        <junit.platform.version>1.11.4</junit.platform.version>
+        <jackson.version>2.18.2</jackson.version>
+        <assertj.version>3.26.3</assertj.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit.platform.version}</version>
+        </dependency>
+
+        <!-- Reads shared-objects/shopbricks-data.json -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- Assertions: the Java equivalent of chai's expect() -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--
+            The JavaScript layout is preserved exactly: page objects, step
+            definitions, shared objects and the runtime each stay in their own
+            top level folder. Java has no hyphens in package names, so every
+            class lives in the default package and each folder is registered as
+            an extra source root below.
+        -->
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/features</directory>
+                <targetPath>features</targetPath>
+                <includes>
+                    <include>**/*.feature</include>
+                </includes>
+            </testResource>
+            <testResource>
+                <directory>${project.basedir}/shared-objects</directory>
+                <includes>
+                    <include>**/*.json</include>
+                </includes>
+            </testResource>
+        </testResources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                    <execution>
+                        <id>add-framework-source-roots</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/page-objects</source>
+                                <source>${project.basedir}/shared-objects</source>
+                                <source>${project.basedir}/step-definitions</source>
+                                <source>${project.basedir}/runtime</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <includes>
+                        <include>RunCucumberTest.java</include>
+                    </includes>
+                    <systemPropertyVariables>
+                        <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>default-tags</id>
+            <activation>
+                <property>
+                    <name>!cucumber.filter.tags</name>
+                </property>
+            </activation>
+            <properties>
+                <cucumber.filter.tags></cucumber.filter.tags>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

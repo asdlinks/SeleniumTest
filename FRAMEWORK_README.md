@@ -1,6 +1,6 @@
 # Shopbricks Selenium BDD Framework
 
-A complete Behavior Driven Development (BDD) test automation framework for the Shopbricks e-commerce platform using Selenium WebDriver and Cucumber.js.
+A complete Behavior Driven Development (BDD) test automation framework for the Shopbricks e-commerce platform using Selenium WebDriver and Cucumber JVM.
 
 ## 📋 Framework Overview
 
@@ -23,82 +23,106 @@ Home Page
 
 ### Prerequisites
 
-- **Node.js** v24.14.0 or higher
-- **Chrome Browser** v145.x (must match ChromeDriver version)
-- **npm** installed globally
+- **JDK 17 or higher** (built and verified on JDK 25)
+- **Chrome Browser** (any recent version)
+- Maven is **not** required — the repo ships the Maven Wrapper
 
 ### Installation
 
-1. **Install dependencies**:
+There is no install step. The first run downloads Maven and the dependencies:
+
 ```bash
-npm install
+./mvnw test          # macOS / Linux
+.\mvnw.cmd test      # Windows
 ```
 
-This installs:
-- `selenium-webdriver` (v3.5.0)
-- `cucumber` (BDD framework)
-- `chromedriver` (v145.x - aligned with Chrome)
-- `chai` (assertions)
+This resolves:
+- `selenium-java` 4.27.0
+- `cucumber-java` + `cucumber-junit-platform-engine` 7.20.1
+- `jackson-databind` (reads the JSON test data)
+- `assertj-core` (assertions)
 
-2. **Verify ChromeDriver**:
-```bash
-npx chromedriver --version
-```
-Should output: `ChromeDriver 145.x.xxxx.xxx`
+### No driver management needed
 
-If your Chrome version differs, update `package.json`:
-```json
-"chromedriver": "^YOUR_CHROME_VERSION"
-```
-Then run `npm install` again.
+Selenium 4 ships **Selenium Manager**, which downloads and matches the browser
+driver to the installed Chrome automatically. There is no ChromeDriver version
+to keep in step with your browser — the version mismatch that plagued the
+JavaScript framework is gone.
 
 ## 📁 Project Structure
 
+The JavaScript layout is preserved exactly — each layer keeps its own top level
+folder. Java has no hyphens in package names, so every class lives in the
+**default package** and each folder is registered as a source root in `pom.xml`
+via `build-helper-maven-plugin`.
+
 ```
-selenium-cucumber-js/
+selenium-cucumber-java/
 │
 ├── features/
-│   └── shopbricks-checkout.feature          # Gherkin test scenarios
+│   ├── shopbricks-checkout.feature          # End to end checkout scenario
+│   ├── deals-offers-filtering.feature       # Filtering / load more scenario
+│   └── catalog-data-validation.feature      # Data driven scenarios
 │
 ├── page-objects/
-│   ├── home-page.js                         # Homepage navigation
-│   ├── deals-offers-page.js                 # Deals section handling
-│   ├── category-page.js                     # Category selection
-│   ├── product-page.js                      # Product page + Add to Cart
-│   ├── cart-page.js                         # Cart verification
-│   ├── checkout-page.js                     # Customer form filling
-│   └── order-confirmation-page.js           # Order confirmation
+│   ├── HomePage.java                        # Homepage navigation
+│   ├── DealsAndOffersPage.java              # Deals section handling
+│   ├── CategoryPage.java                    # Category selection
+│   ├── CatalogPage.java                     # Generic listing page reader
+│   ├── ProductPage.java                     # Product page + Add to Cart
+│   ├── CartPage.java                        # Cart verification
+│   ├── CheckoutPage.java                    # Customer form filling
+│   └── OrderConfirmationPage.java           # Order confirmation
+│
+├── shared-objects/
+│   ├── shopbricks-data.json                 # 👈 Single source of test data
+│   ├── DataProvider.java                    # Lookup helpers over the JSON
+│   ├── HomePageData.java                    # Homepage expectations (from JSON)
+│   └── TestData.java                        # Credentials (from JSON)
 │
 ├── step-definitions/
-│   └── shopbricks-steps.js                  # Gherkin step implementations
+│   └── ShopbricksSteps.java                 # Gherkin step implementations + hooks
 │
-├── cucumber.js                              # Cucumber configuration
-├── package.json                             # Dependencies
-├── test.js                                  # Legacy standalone test script
-└── README.md                                # This file
+├── runtime/
+│   ├── DriverFactory.java                   # Builds the WebDriver
+│   ├── Helpers.java                         # Shared browser utilities
+│   └── RunCucumberTest.java                 # Suite entry point + report config
+│
+├── pom.xml                                  # Dependencies and source roots
+├── mvnw / mvnw.cmd                          # Maven Wrapper
+└── FRAMEWORK_README.md                      # This file
 ```
 
 ## ▶️ Running Tests
 
+On Windows use `.\mvnw.cmd` in place of `./mvnw` below.
+
 ### Run All Tests
 ```bash
-npx cucumber-js features/shopbricks-checkout.feature
+./mvnw test
 ```
 
-### Run Specific Scenario
+### Run by Tag
 ```bash
-npx cucumber-js features/shopbricks-checkout.feature --name "Complete checkout flow"
+./mvnw test -Dcucumber.filter.tags="@data-driven"
+./mvnw test -Dcucumber.filter.tags="@catalog-data or @product-data"
+./mvnw test -Dcucumber.filter.tags="not @deals-offers-flow"
 ```
 
-### Run with Detailed Output
+### Run a Single Feature
 ```bash
-npx cucumber-js features/shopbricks-checkout.feature --format progress-bar --format json:reports/cucumber-report.json
+./mvnw test -Dcucumber.features=features/catalog-data-validation.feature
 ```
 
-### Run with Custom Timeout
-By default, tests timeout after 30 seconds. To increase:
+### Run a Single Scenario by Name
 ```bash
-npx cucumber-js features/shopbricks-checkout.feature --timeout 60000
+./mvnw test -Dcucumber.filter.name="Complete checkout flow"
+```
+
+### Choose a Browser / Run Headless
+```bash
+./mvnw test -Dbrowser=firefox
+./mvnw test -Dheadless=true
 ```
 
 ## 📊 Test Reports
@@ -107,26 +131,37 @@ After running tests, reports are generated in the `reports/` directory:
 
 - **HTML Report**: `reports/cucumber-report.html` (open in browser)
 - **JSON Report**: `reports/cucumber-report.json` (programmatic access)
-- **JUnit XML**: `junit/cucumber-report.xml` (CI/CD integration)
+- **JUnit XML**: `reports/junit-report.xml` (CI/CD integration)
+- **Surefire**: `target/surefire-reports/` (Maven test output)
 
 ## 🔧 Configuration
 
-### Cucumber Config (cucumber.js)
+### Cucumber Config (runtime/RunCucumberTest.java)
 
-```javascript
-{
-  "default": {
-    "require": "step-definitions/**/*.js",
-    "format": [
-      "progress-bar",
-      "html:reports/cucumber-report.html",
-      "json:reports/cucumber-report.json"
-    ],
-    "formatOptions": {
-      "snippetInterface": "async-await"
-    }
-  }
+```java
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("features")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,
+        value = "pretty,"
+                + "json:reports/cucumber-report.json,"
+                + "html:reports/cucumber-report.html,"
+                + "junit:reports/junit-report.xml")
+public class RunCucumberTest {
 }
+```
+
+The empty glue value means "the default package", which is where every class in
+this framework lives. Source roots are wired up in `pom.xml`:
+
+```xml
+<sources>
+    <source>${project.basedir}/page-objects</source>
+    <source>${project.basedir}/shared-objects</source>
+    <source>${project.basedir}/step-definitions</source>
+    <source>${project.basedir}/runtime</source>
+</sources>
 ```
 
 ### Test Data Customization
@@ -147,9 +182,48 @@ And I fill in the customer details:
 
 Replace email, name, address with your test data.
 
-## 🎯 Test Scenario
+## 🗄️ Central Test Data (`shared-objects/shopbricks-data.json`)
 
-The framework tests the "Complete checkout flow for pipe wrench purchase" scenario:
+Every expected value used by the framework lives in **one** JSON file. Nothing in
+the step definitions or page objects hard-codes a URL, title, product name, price
+or filter limit any more — they all resolve through
+`shared-objects/DataProvider.java`.
+
+| Block | What it holds |
+| --- | --- |
+| `site` | Base URL, store name, title suffix, currency |
+| `pages` | Key, name, path, URL and expected `<title>` for each static page |
+| `navigation` | Header links, the `Browse by` sidebar list, filter/sort labels, footer departments |
+| `categories` | Per category: name, URL, page title, product count, price-slider bounds, and the full expected product list (name, slug, SKU, price) |
+| `products` | Master catalogue of 69 products keyed by slug (name, SKU, price, URL, page title, parent categories) |
+| `productPage` | Static product-page labels (`Add to Cart`, `SKU:`, `PRODUCT INFO`) |
+| `homePageContent` | Homepage section headings, category tiles, trending products |
+| `homepage` | Legacy homepage expectations consumed by `HomePageData.java` |
+| `credentials` | Login credentials consumed by `TestData.java` |
+| `testCases` | Per-scenario inputs: checkout customer details, filter limits, load-more clicks, and the category keys / product slugs that drive the `Scenario Outline` examples |
+
+### Reading data in a step definition
+
+```java
+JsonNode category = DataProvider.getCategory("hardware");   // one category block
+JsonNode product  = DataProvider.getProduct("pipe-wrench-8-in-length");
+JsonNode checkout = DataProvider.getTestCase("checkout");   // scenario inputs
+
+String title = category.get("pageTitle").asText();
+double price = product.get("price").asDouble();
+```
+
+Helpers available: `getCategory`, `getCategoryUrl`, `getExpectedProducts`,
+`getExpectedProductNames`, `getProduct`, `getPage`, `getTestCase`, plus the raw
+blocks (`site()`, `pages()`, `navigation()`, `categories()`, `products()`, …).
+The JSON is loaded once from the classpath and cached.
+
+> The data file mirrors the live store. When the catalogue changes, update
+> `shopbricks-data.json` — no step definition or page object needs editing.
+
+## 🎯 Test Scenarios
+
+### 1. Complete checkout flow for pipe wrench purchase
 
 **Given**: User navigates to Shopbricks homepage
 **When**: User clicks Deals & Offers → selects Hardware → finds Pipe Wrench → adds to cart
@@ -157,15 +231,61 @@ The framework tests the "Complete checkout flow for pipe wrench purchase" scenar
 **When**: User proceeds to checkout → fills customer details → places order
 **Then**: Order confirmation page displays with Thank You message
 
+### 2. Deals & Offers filtering and load more
+
+Validates the product count, three `Load More` clicks and the price-range slider
+on the Deals & Offers listing. Limits come from `testCases.dealsOffersFiltering`.
+
+### 3. Data driven catalogue validation (`Scenario Outline`)
+
+For each category key in the `Examples` table, opens the listing page and asserts
+the page `<title>`, the product count, that every expected product is rendered,
+and that every rendered price matches the JSON.
+
+```bash
+./mvnw test -Dcucumber.filter.tags="@catalog-data"
+```
+
+### 4. Data driven product detail validation (`Scenario Outline`)
+
+For each product slug in the `Examples` table, opens the product page and asserts
+the page `<title>`, product name, price, SKU and the presence of `Add to Cart`.
+
+```bash
+./mvnw test -Dcucumber.filter.tags="@product-data"
+```
+
+### 5. Data driven navigation and filter bounds validation
+
+Asserts the `Browse by` heading, that the sidebar category list matches the
+expected labels **and order**, and that the price slider was rendered with the
+expected minimum/maximum bounds.
+
+```bash
+./mvnw test -Dcucumber.filter.tags="@navigation-data"
+```
+
+Run all three data driven scenarios together:
+
+```bash
+./mvnw test -Dcucumber.filter.tags="@data-driven"
+```
+
 ## ⏱️ Timing & Delays
 
 The framework includes strategic delays to handle dynamic page loading:
 
-- **2-second delay** after clicking product category (category-page.js)
-- **2-second delay** after clicking product (product-page.js)
-- **2-second delay** before clicking "Add to Cart" (product-page.js)
-- **1-second delay** before clicking "Proceed to Checkout" (cart-page.js)
-- **1-second delay** before clicking "Place Order" (checkout-page.js)
+- **2-second delay** after clicking product category (CategoryPage.java)
+- **2-second delay** after clicking product (ProductPage.java)
+- **Wait for the "Bricks AI Assistant" widget** before clicking "Add to Cart" (ProductPage.java).
+  The widget is the last thing the product page renders (~10s after load), so its
+  appearance is a reliable signal that the page has finished hydrating. Without it
+  the click lands too early and the item is never actually added to the cart.
+  Timeout comes from `productPage.aiAssistantTimeoutMs` in `shopbricks-data.json`;
+  if the widget never appears the wait is logged and the test continues.
+- **2-second delay** before clicking "Add to Cart" (ProductPage.java)
+- **1-second delay** before clicking "Proceed to Checkout" (CartPage.java)
+- **1-second delay** before clicking "Place Order" (CheckoutPage.java)
 
 These delays prevent "Element not clickable" errors and ensure page elements are interactive.
 
@@ -174,34 +294,55 @@ These delays prevent "Element not clickable" errors and ensure page elements are
 Each page has its own Page Object class for maintainability:
 
 ### HomePage
-```javascript
+```java
 navigateToHome(url)           // Navigate to homepage
 clickDealsAndOffers()          // Click Deals & Offers link
 waitForPageLoad()              // Wait for page ready
 ```
 
 ### DealsOffersPage
-```javascript
+```java
 selectCategory(categoryName)   // Select category (e.g., "Hardware")
 isDealsOffersPageLoaded()     // Verify page loaded
 ```
 
 ### CategoryPage
-```javascript
+```java
 selectProduct(productName)     // Select product by name
 waitForCategoryPageLoad()      // Wait for category page
 ```
 
+### CatalogPage (data driven scenarios)
+```java
+navigateTo(url)                // Open any /category/<key> listing page
+waitForProductGrid()           // Wait for the first product tile
+getPageTitle()                 // Read document.title
+getProductCount()              // Count rendered product tiles
+getListedProducts()            // [{ name, slug, priceText, price }] per tile
+getBrowseByHeadingText()       // Read the sidebar heading
+getSidebarCategories()         // [{ label, url }] for the Browse by links
+getPriceFilterBounds()         // { minimum, maximum } of the price slider
+```
+
 ### ProductPage
-```javascript
+```java
 addToCart()                    // Click Add to Cart with 2s delay
 getProductName()               // Get product name
 getProductPrice()              // Get product price
 isAddToCartVisible()           // Verify button visibility
+
+// Data driven helpers (read via stable data-hook attributes)
+navigateTo(url)                // Open a product page directly
+waitForProductDetailsLoad()    // Wait for the product title
+getPageTitle()                 // Read document.title
+getDisplayedName()             // Product name shown on the page
+getDisplayedPrice()            // Numeric price shown on the page
+getDisplayedSku()              // SKU with the "SKU:" prefix stripped
+isAddToCartButtonPresent()     // Verify the Add to Cart button
 ```
 
 ### CartPage
-```javascript
+```java
 proceedToCheckout()            // Click Checkout button
 isProductInCart(productName)   // Verify item in cart
 getItemCount()                 // Get cart item count
@@ -209,14 +350,14 @@ isCheckoutButtonVisible()      // Verify checkout button
 ```
 
 ### CheckoutPage
-```javascript
+```java
 fillCustomerDetails(details)   // Fill form fields (email, name, address, etc.)
 placeOrder()                   // Click Place Order button
 clickContinue()                // Click Continue (if present)
 ```
 
 ### OrderConfirmationPage
-```javascript
+```java
 waitForConfirmationPageLoad()  // Wait for confirmation page
 isOrderConfirmed()             // Verify Thank You message
 getThankYouText()              // Extract thank you message
@@ -226,18 +367,24 @@ getOrderNumber()               // Extract order number
 
 ## 🐛 Debugging
 
-### View Browser in Real-Time
-Currently tests run headless (background Chrome process). To watch the browser:
+### Headed vs Headless
+Tests run headed by default so you can watch the browser. To run headless:
 
-Edit `step-definitions/shopbricks-steps.js`, Before hook:
-```javascript
-const driver = await new Builder()
-  .forBrowser('chrome')
-  .setChromeOptions(new chrome.Options().headless(false))  // Show browser
-  .build();
+```bash
+./mvnw test -Dheadless=true
 ```
 
-Then run tests—Chrome window will stay open.
+Both modes are handled by `runtime/DriverFactory.java`:
+```java
+ChromeOptions options = new ChromeOptions();
+options.addArguments("--start-maximized", "--disable-extensions");
+
+if (headless) {
+    options.addArguments("--headless=new", "--window-size=1920,1080");
+}
+
+return new ChromeDriver(options);
+```
 
 ### Enable Detailed Console Logging
 Page objects already log major steps:
@@ -255,28 +402,44 @@ Watch console output to trace each step.
 
 | Issue | Solution |
 |-------|----------|
-| "ChromeDriver version mismatch" | Run `npm install` to sync chromedriver version |
+| "ChromeDriver version mismatch" | Should not happen — Selenium Manager matches the driver to Chrome automatically |
 | "Element not clickable" | Increase delay times in page objects (currently 1-2 seconds) |
 | "Cannot find element" | Check Shopbricks UI structure—add fallback XPaths in page objects |
-| "connection refused" | Ensure Chrome is installed and chromedriver path is correct |
+| "connection refused" | Ensure Chrome is installed |
+| "No features found" | Run `./mvnw clean test` so `features/` is re-copied onto the classpath |
+| Undefined steps | Check the class is in the **default package** (no `package` line) |
 
 ## 📝 Step Definitions
 
-Steps are defined in `step-definitions/shopbricks-steps.js`:
+Steps are defined in `step-definitions/ShopbricksSteps.java`:
 
-```javascript
-Given('I navigate to the Shopbricks website', async function () { ... })
-When('I click on the Deals and Offers section', async function () { ... })
-And('I select the Hardware category', async function () { ... })
-And('I search for and select the Pipe Wrench product', async function () { ... })
-And('I add the product to the cart', async function () { ... })
-Then('I should see the product added to cart notification', async function () { ... })
-When('I proceed to checkout', async function () { ... })
-And('I fill in the customer details:', async function (dataTable) { ... })
-And('I click the Place Order button', async function () { ... })
-Then('I should see the Thank You message confirming the order', async function () { ... })
-And('I should see the order confirmation details', async function () { ... })
+```java
+@Given("I navigate to the Shopbricks website")
+public void iNavigateToTheShopbricksWebsite() { ... }
+
+@When("I click on the Deals and Offers section")
+public void iClickOnTheDealsAndOffersSection() { ... }
+
+@When("I select the Hardware category")
+public void iSelectTheHardwareCategory() { ... }
+
+@When("I fill in the customer details:")
+public void iFillInTheCustomerDetails(DataTable dataTable) { ... }
+
+@Then("I should see the Thank You message confirming the order")
+public void iShouldSeeTheThankYouMessage() { ... }
 ```
+
+Parameterised (data driven) steps use Cucumber Expressions:
+
+```java
+@Given("I open the {string} category page")
+public void iOpenTheCategoryPage(String categoryKey) { ... }
+```
+
+`@Before` / `@After` hooks live in the same class, so Cucumber creates a fresh
+instance — and therefore a fresh WebDriver — for every scenario, exactly as the
+JavaScript `Before`/`After` hooks did.
 
 Before/After hooks manage WebDriver lifecycle:
 - **Before**: Launches Chrome browser, initializes page objects
@@ -288,11 +451,11 @@ The framework includes:
 - Multi-selector fallback patterns (try multiple XPaths if first fails)
 - Graceful error handling (skip missing form fields instead of crashing)
 - Explicit waits for page elements (15-second timeout by default)
-- Promise-based async/await for clean async handling
+- Explicit `WebDriverWait` conditions instead of implicit waits
 
 ## 🚀 Next Steps
 
-1. **Run tests**: `npx cucumber-js`
+1. **Run tests**: `./mvnw test`
 2. **View report**: Open `reports/cucumber-report.html` in browser
 3. **Add more scenarios**: Create additional `.feature` files in `features/`
 4. **Add screenshots**: Extend `After` hook with `driver.takeScreenshot()`
@@ -300,7 +463,8 @@ The framework includes:
 
 ## 📚 Additional Resources
 
-- [Cucumber.js Documentation](https://github.com/cucumber/cucumber-js)
+- [Cucumber JVM Documentation](https://github.com/cucumber/cucumber-jvm)
+- [Cucumber Expressions](https://github.com/cucumber/cucumber-expressions)
 - [Selenium WebDriver API](https://www.selenium.dev/documentation/webdriver/getting_started/install_libraries/)
 - [Gherkin Syntax](https://cucumber.io/docs/gherkin/)
 - [Page Object Model Pattern](https://www.selenium.dev/documentation/webdriver/pom/)
