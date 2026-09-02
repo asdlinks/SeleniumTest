@@ -329,7 +329,7 @@
       "minimumExpectedProducts": 8,
       "priceFilter": {
         "minimum": 0,
-        "maximum": 97
+        "maximum": 95
       },
       "expectedProducts": [
         {
